@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Artcraft Adobe Map</title>
+<!--
+source: https://github.com/orgs/storytold/repositories
+source: https://www.youtube.com/watch?v=Fuo1i_-9Frc
+date: 2026-10-08
+-->
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--text:#e2e8f0;--text2:#cbd5e1;--muted:#94a3b8;--a1:#fb923c;--a2:#2dd4bf;--b:#334155}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,Segoe UI,sans-serif}
+main{max-width:860px;margin:0 auto;padding:32px 16px 64px}
+h1{font-size:1.9rem;margin:0 0 4px;color:var(--a1)}
+h2{font-size:1.25rem;margin:36px 0 8px;color:var(--a2);border-bottom:1px solid var(--b);padding-bottom:4px}
+p{color:var(--text2);margin:10px 0}
+.meta{color:var(--muted);font-size:.9rem}
+.card{background:var(--card);border:1px solid var(--b);border-radius:10px;padding:4px 18px 10px;margin:14px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.92rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--b);vertical-align:top}
+th{color:var(--muted);font-weight:600}
+td:first-child{white-space:nowrap}
+code{background:var(--card);padding:1px 6px;border-radius:4px;color:var(--a1);font-size:.9em}
+.tbl{overflow-x:auto}
+pre{background:var(--bg);border:1px solid var(--b);border-radius:8px;padding:12px;overflow-x:auto;font-size:.85rem}
+pre code{background:none;padding:0;color:var(--text2)}
+li{color:var(--text2);margin:6px 0}
+li b{color:var(--text)}
+</style>
+</head>
+<body>
+<main>
+<h1>Artcraft Adobe Map</h1>
+<p class="meta">Sources: GitHub org page <code>github.com/orgs/storytold/repositories</code> (2 pages, 41 repos), the READMEs of <code>effectcraft</code> and <code>designcraft</code>, and the YouTube video "Someone Just Rebuilt Adobe for Free, and Claude Can Run Them All (7 apps tested)" by Jay E | RoboNuggets (<code>Fuo1i_-9Frc</code>). Date: 2026-10-08.</p>
+
+<h2>Thesis</h2>
+<p>The GitHub organization <code>storytold</code> (the group the video calls Artcraft) publishes 12 desktop applications that each copy the interface of one commercial product. Seven of them copy an Adobe product. Five copy other vendors. All 12 are written in Rust. The video claims that Claude Opus 5.5 produced them as "clean room reimplementations", which means they were written from scratch and not by reverse engineering Adobe software. The video and the READMEs make this claim. I did not inspect source code to verify it.</p>
+
+<h2>Repository to Adobe product</h2>
+<div class="tbl card">
+<table>
+<tr><th>Repo</th><th>Stars</th><th>Adobe product</th><th>Evidence</th></tr>
+<tr><td><code>photocraft</code></td><td>23k</td><td>Photoshop</td><td>Org page, video</td></tr>
+<tr><td><code>filmcraft</code></td><td>4.3k</td><td>Premiere Pro</td><td>Org page, video</td></tr>
+<tr><td><code>effectcraft</code></td><td>2.2k</td><td>After Effects</td><td>README: "clean-room reimplementation of Adobe After Effects"</td></tr>
+<tr><td><code>vectorcraft</code></td><td>3k</td><td>Illustrator</td><td>Org page, video</td></tr>
+<tr><td><code>designcraft</code></td><td>1.3k</td><td>InDesign</td><td>README: "clean-room reimplementation of Adobe InDesign"</td></tr>
+<tr><td><code>lightcraft</code></td><td>4.2k</td><td>Lightroom</td><td>Org page, video</td></tr>
+<tr><td><code>pdfcraft</code></td><td>3.5k</td><td>Acrobat</td><td>Org page, video</td></tr>
+</table>
+</div>
+<p>The two mappings that the org page left undescribed are now confirmed by their own READMEs. The other five mappings rest on the org page descriptions and the video narration.</p>
+
+<h2>Detail on the two repos checked</h2>
+<p><code>effectcraft</code> is a motion graphics and compositing application. Its README lists compositions, layers and keyframes, 306 effects, layer styles, expressions, 3D cameras and lights, a render queue, and Lottie import and export. Project files use readable, versioned JSON with the extension <code>.ecproj</code>. It does not depend on FFmpeg. The README states that the project is young and is not yet a full replacement for After Effects. It cannot open <code>.aep</code> files. The video author called After Effects the most complex Adobe product to recreate, so the missing <code>.aep</code> import is a material limit for anyone with existing projects.</p>
+<p><code>designcraft</code> is a page layout application that runs on macOS, Windows, Linux, and in the browser through WebAssembly. It has spreads, parent pages, threaded text frames, and paragraph and character styles. It uses a Knuth–Plass paragraph composer so that line breaks match on screen and in PDF output. It imports and exports IDML (the InDesign interchange format) and exports PNG. PDF export is planned and is not yet present. Both repos use the license "MIT or Apache-2.0, at your option".</p>
+
+<h2>Agent control</h2>
+<p>Both READMEs describe a command line tool and an MCP server mode: <code>effectcraft-cli</code> and <code>designcraft-cli</code>. Both repos contain an <code>AGENTS.md</code> file. That file holds the clean-room rules, the asset policy, and the quality gates. The video says this design is why Claude can drive the applications. The video author tested two cases. A logo animation in <code>effectcraft</code> and a magazine spread in <code>designcraft</code> were each produced from one prompt, as a first draft with editable layers. The author states that the output is "somewhat okay" and easier to refine than a single-prompt generated image, because each layer stays separate.</p>
+
+<h2>Other repositories</h2>
+<p>Five more craft applications copy non-Adobe products: <code>wordcraft</code> (Word, 533 stars), <code>gridcraft</code> (Excel, 327), <code>deckcraft</code> (PowerPoint, 288), <code>soundcraft</code> (Pro Tools, 340), and <code>cadcraft</code> (CAD and drafting, 470; the page names no vendor). The video does not mention them. Supporting repos are <code>artcraft</code> (6.3k stars, "creative engine"), <code>artcraft-services</code> (backend and web frontend), <code>craft-fonts</code>, <code>photocraft-corpus</code> (test data), <code>artcraftx</code>, and <code>github-media</code>. The remaining 29 repos date from 2020 to 2025. They are Unreal Engine 4 plugins, Azure Kinect tools, motion capture and voice model experiments, and infrastructure code. The org worked on those topics before the craft apps.</p>
+
+<h2>How to install each craft from Claude Code or Codex</h2>
+<p>Each repo publishes ready-made installers, so you do not need to compile anything. The READMEs list these release files: for Windows, an <code>.msi</code> installer and a <code>-portable.zip</code> (x64, arm64, x86); for macOS, a universal <code>.dmg</code> for the app and a universal <code>-cli</code> <code>.zip</code>; for Linux, AppImage, Flatpak, <code>.deb</code>, <code>.rpm</code> and <code>.tar.gz</code> (x86_64, aarch64). A <code>SHA256SUMS.txt</code> file lists a checksum for every file. The READMEs say Windows files are code-signed and macOS files are signed and notarized. None of them says how to deal with a SmartScreen or Gatekeeper warning. The site <code>getartcraft.com/apps</code> lists "Installers ready" for all 7 apps but shows no version numbers or direct links in the text that I read. The apps are early alpha (<code>photocraft</code>, <code>pdfcraft</code>) or "in development" (the other five).</p>
+<p><b>Rule for every step:</b> the agent may download files and run installers on your computer. Start each session by telling the agent to show the plan and wait. Run the install in an empty folder, because downloaded files are untrusted.</p>
+
+<div class="card">
+<h3 style="color:var(--a1)">The same six steps for all 7 apps</h3>
+<p>Open Claude Code or Codex in a new empty folder, for example <code>craft-install</code>. Give the agent each prompt in turn. Replace <code>CRAFT</code> with the repo name, for example <code>pdfcraft</code>.</p>
+<ol>
+<li><b>Check the machine.</b><br>"Tell me my operating system, my CPU type (x64 or arm64), and whether Rust, git and the GitHub CLI are installed. Do not install anything yet."</li>
+<li><b>Find the right file.</b><br>"Look at the latest release of github.com/storytold/CRAFT. List the files. Pick the installer that fits my machine. Tell me the file name, its size and its version. Wait for my yes."</li>
+<li><b>Download and verify.</b><br>"Download that file and SHA256SUMS.txt into this folder. Check the file against the checksum. Tell me if they match. Stop if they do not."</li>
+<li><b>Install.</b><br>"Install it. On Windows, run the .msi. On macOS, mount the .dmg and copy the app to Applications. On Linux, use the AppImage, or the .deb or .rpm if I prefer a system install. Tell me before each step that needs administrator rights."</li>
+<li><b>Get the command line tool.</b><br>"I also want CRAFT-cli so that you can drive the app. Find it in the release files. If the release has no CLI file for my system, ask me before you build it from source."</li>
+<li><b>Connect it to you.</b><br>"Register CRAFT-cli as an MCP server for this agent. Show me the exact command or config entry first. Then restart if needed and list the tools you can now call." (Config entries are in the Codex configuration card below.)</li>
+</ol>
+<p>The README names a CLI file only for macOS (<code>CRAFT-cli-&lt;ver&gt;-macos-universal.zip</code>). The text I read does not say whether the Windows and Linux installers include the CLI. That is why step 5 allows a source build.</p>
+</div>
+
+<div class="card">
+<h3 style="color:var(--a1)">Option B for all 7 apps: build from source</h3>
+<p>Use this when no installer fits, for example on a Windows arm64 machine without a matching file, or when you want the CLI. You need <code>git</code> and Rust. The <code>effectcraft</code> README says Rust 1.95 or newer. The other READMEs give no version, so use the same.</p>
+<ol>
+<li>"Check that Rust 1.95 or newer is installed. If not, tell me how to install it with rustup and wait for my yes."</li>
+<li>"Clone github.com/storytold/CRAFT into this folder and read AGENTS.md and the README. Tell me the build commands in your own words."</li>
+<li>"Build the release version of the app and of CRAFT-cli. Tell me where the binaries are." (The READMEs do not say where cargo puts the files. The default is <code>target/release</code> inside the repo. The <code>lightcraft</code> MCP example uses <code>"$PWD/target/release/lightcraft-cli"</code>.)</li>
+<li>"Run the quick check from the README and show me the output."</li>
+</ol>
+</div>
+
+<div class="card">
+<h3 style="color:var(--a1)">pdfcraft — install</h3>
+<p>Files: <code>pdfcraft-&lt;ver&gt;-windows-x64.msi</code>, <code>pdfcraft-&lt;ver&gt;-macos-universal.dmg</code>, <code>pdfcraft-cli-&lt;ver&gt;-macos-universal.zip</code>, plus Linux and FreeBSD files. Status: early alpha.</p>
+<p><b>One-prompt version:</b> "Install pdfcraft from the latest release at github.com/storytold/pdfcraft for my machine. Download the installer and SHA256SUMS.txt, verify the checksum, show me the plan, wait for my yes, then install. Then get pdfcraft-cli and register it as an MCP server limited to the folder ~/Documents/pdfs with --root."</p>
+<p><b>Check it works:</b> "Create a one-page sample PDF and run pdfcraft-cli info on it. Show me the JSON." <b>Source build:</b> <code>cargo run --release -p pdfcraft -- some.pdf</code>.</p>
+</div>
+
+<div class="card">
+<h3 style="color:var(--a1)">photocraft — install</h3>
+<p>Files: <code>photocraft-&lt;ver&gt;-macos-universal.dmg</code>, <code>photocraft-cli-&lt;ver&gt;-macos-universal.zip</code>, Windows <code>.msi</code>, Linux, FreeBSD. Status: early alpha. Linux Flatpak needs the freedesktop runtime from Flathub. An AppImage needs no install; on the first run it adds a launcher entry in <code>~/.local/share</code> (set <code>PHOTOCRAFT_NO_DESKTOP_INTEGRATION=1</code> to skip that).</p>
+<p><b>One-prompt version:</b> "Install photocraft from github.com/storytold/photocraft for my machine. Use the latest release, verify the checksum, show me the plan and wait for my yes. Then install photocraft-cli, register it as an MCP server, and tell me the tools you can call."</p>
+<p><b>Check it works:</b> "Run photocraft-cli batch --help and explain the options." <b>Source build:</b> <code>cargo run --release -p photocraft -- image.psd</code>. Reading HEIC photos needs the build option <code>--features heif</code>, which official builds include.</p>
+</div>
+
+<div class="card">
+<h3 style="color:var(--a1)">lightcraft — install</h3>
+<p>The README says the easiest install is the LightCraft page on getartcraft.com. Release files follow the same pattern. A Nix option exists: <code>nix run github:storytold/lightcraft</code>.</p>
+<p><b>One-prompt version:</b> "Install lightcraft from the latest release at github.com/storytold/lightcraft. Verify the checksum and wait for my yes before you install. Then set up lightcraft-cli as an MCP server on my photo folder ~/Pictures/shoot, and tell me the tools you can call."</p>
+<p><b>Check it works:</b> "Render a sample JPEG with light.exposure set to 0.5 using lightcraft-cli and show me the output file." <b>Source build:</b> <code>cargo run --release -p lightcraft</code> for the app and <code>cargo run --release -p lightcraft-cli -- render photo.jpg -o out.jpg --set light.exposure=0.5</code> for the CLI. Chinese and Japanese text show no glyphs unless you clone <code>craft-fonts</code> and set <code>CRAFT_FONTS_DIR</code>.</p>
+</div>
+
+<div class="card">
+<h3 style="color:var(--a1)">vectorcraft — install</h3>
+<p>Files: <code>vectorcraft-&lt;ver&gt;-windows-x64.msi</code>, <code>vectorcraft-&lt;ver&gt;-macos-universal.dmg</code>, <code>vectorcraft-cli-&lt;ver&gt;-macos-universal.zip</code>, Linux and FreeBSD files. On macOS a source build can also make an app bundle with <code>cargo xtask bundle</code> (output <code>dist/VectorCraft.app</code>).</p>
+<p><b>One-prompt version:</b> "Install vectorcraft from the latest release at github.com/storytold/vectorcraft for my machine. Verify the checksum, show me the plan and wait for my yes. Then register vectorcraft-cli as an MCP server with the mcp argument and list the tools you can call."</p>
+<p><b>Check it works:</b> "Clone the repo, run the example examples/ribbons.vectorcraft through vectorcraft-cli, export out.pdf, and tell me what the file contains." (The README command is <code>vectorcraft-cli run --in examples/ribbons.vectorcraft --export out.pdf</code>. The examples are in the repo, not in the installer.)</p>
+</div>
+
+<div class="card">
+<h3 style="color:var(--a1)">filmcraft — install</h3>
+<p>Files: <code>filmcraft-&lt;ver&gt;-windows-x64.msi</code>, <code>filmcraft-&lt;ver&gt;-macos-universal.dmg</code>, <code>filmcraft-cli-&lt;ver&gt;-macos-universal.zip</code>, Linux and FreeBSD files. It needs no FFmpeg; the README says FFmpeg is used only as a test reference. The site lists "No" for a web version, while the README lists <code>filmcraft-web-&lt;ver&gt;.zip</code>. I did not resolve this conflict.</p>
+<p><b>One-prompt version:</b> "Install filmcraft from the latest release at github.com/storytold/filmcraft for my machine. Verify the checksum and wait for my yes. Then set up filmcraft-cli as a headless MCP server (the mcp argument) and list the tools you can call."</p>
+<p><b>Check it works:</b> "Run filmcraft-cli commands and tell me how many engine commands there are." (The README says more than 650.) <b>Source build:</b> <code>cargo run --release -p filmcraft</code> opens the app with a demo project.</p>
+</div>
+
+<div class="card">
+<h3 style="color:var(--a1)">effectcraft — install</h3>
+<p>Files: <code>effectcraft-&lt;ver&gt;-windows-x64.msi</code> and <code>-portable.zip</code>, <code>effectcraft-&lt;ver&gt;-macos-universal.dmg</code>, <code>effectcraft-cli-&lt;ver&gt;-macos-universal.zip</code>, Linux (for example <code>effectcraft-&lt;ver&gt;-linux-x86_64.AppImage</code>) and FreeBSD files. The README says building needs Rust 1.95 or newer.</p>
+<p><b>One-prompt version:</b> "Install effectcraft from the latest release at github.com/storytold/effectcraft for my machine. Verify the checksum and wait for my yes. Then register effectcraft-cli as an MCP server using the mcp argument, and list the tools you can call."</p>
+<p><b>Check it works:</b> "Run the effectcraft-cli render command to make intro.mp4 and tell me how long the video is." (README: <code>cargo run --release -p effectcraft-cli -- render --out intro.mp4</code>.) <b>Source build:</b> <code>cargo run --release -p effectcraft -- --demo</code> opens the demo project.</p>
+</div>
+
+<div class="card">
+<h3 style="color:var(--a1)">designcraft — install</h3>
+<p>The README says to download it from the DesignCraft page on getartcraft.com, or from the GitHub releases page for older builds. Release files follow the same pattern (MSI, DMG, Linux, FreeBSD, web zip <code>designcraft-web-&lt;ver&gt;.zip</code>). The web build from source needs <code>trunk</code> and the <code>wasm32-unknown-unknown</code> target.</p>
+<p><b>One-prompt version:</b> "Install designcraft from the latest release at github.com/storytold/designcraft for my machine. Verify the checksum and wait for my yes. Then find out how designcraft-cli starts its MCP server by reading docs/mcp.md in the repo, register it, and list the tools you can call."</p>
+<p><b>Check it works:</b> "Run designcraft-cli commands and show me the first 20 commands." <b>Source build:</b> <code>cargo run --release -p designcraft -- --sample</code> opens a sample document.</p>
+</div>
+
+<p><b>Not verified in the install section:</b> I did not download or run any installer. The version numbers, the CLI files for Windows and Linux, and the output folder of a source build are not in the README text that I read. The "one-prompt" versions are my wording. The six-step prompts are also my wording, and I did not test them with either agent.</p>
+
+<h2>How to use each craft from Claude Code or Codex (for a non-designer)</h2>
+<p>You need no design skill to start. Each app has a command line tool and an MCP server. An MCP server is a small program that lets an agent call the app's commands as tools. You tell the agent what you want in plain words. The agent calls the commands. You open the result in the app and adjust it if you want. Every command string below comes from the repo READMEs, which I read on 2026-10-08. The prompts are my examples, and I did not run any of them. All tools are built with Rust, so you need Rust 1.95 or newer to build them from source. The repos also publish downloads, for example a macOS zip for <code>photocraft-cli</code>.</p>
+<p>The setup is the same for each app. In Claude Code, register the server once, for example <code>claude mcp add vectorcraft -- /path/to/vectorcraft-cli mcp</code>. In Codex, you add the same command and arguments to the file <code>~/.codex/config.toml</code> (on Windows, <code>C:\Users\&lt;you&gt;\.codex\config.toml</code>). Each server is one table named <code>[mcp_servers.&lt;name&gt;]</code> with a <code>command</code> key and an optional <code>args</code> list. The key must be <code>mcp_servers</code> with an underscore, not <code>mcpServers</code>. The READMEs show only the Claude Code form. I took the Codex form from the OpenAI Codex MCP documentation. Each repo also has an <code>AGENTS.md</code> file. Tell the agent to read it first.</p>
+<div class="card">
+<h3 style="color:var(--a1)">Codex configuration for the seven apps</h3>
+<p>Replace each path with the real path of the binary you built or downloaded. In TOML, use single quotes around a Windows path so that the backslashes stay literal. Add only the apps that you want.</p>
+<pre><code># ~/.codex/config.toml
+
+[mcp_servers.pdfcraft]
+command = 'C:\tools\craft\pdfcraft-cli.exe'
+args = ["mcp", "--root", 'C:\Users\you\Documents\pdfs']
+
+[mcp_servers.photocraft]
+command = 'C:\tools\craft\photocraft-cli.exe'
+args = ["mcp"]
+
+[mcp_servers.lightcraft]
+command = 'C:\tools\craft\lightcraft-cli.exe'
+args = ["mcp", 'C:\Users\you\Pictures\shoot']
+
+[mcp_servers.vectorcraft]
+command = 'C:\tools\craft\vectorcraft-cli.exe'
+args = ["mcp"]
+
+[mcp_servers.filmcraft]
+command = 'C:\tools\craft\filmcraft-cli.exe'
+args = ["mcp"]
+
+[mcp_servers.effectcraft]
+command = 'C:\tools\craft\effectcraft-cli.exe'
+args = ["mcp"]
+
+[mcp_servers.designcraft]
+command = 'C:\tools\craft\designcraft-cli.exe'
+args = ["mcp"]</code></pre>
+<p><b>Same setup from the command line:</b> <code>codex mcp add pdfcraft -- C:\tools\craft\pdfcraft-cli.exe mcp --root C:\Users\you\Documents\pdfs</code>. The <code>--</code> separates the Codex options from the server command. Then run <code>codex mcp list</code> to see the servers and <code>codex mcp get pdfcraft</code> to see one entry. Inside Codex, the <code>/mcp</code> command lists the active servers. Restart Codex after you edit the file.</p>
+<p><b>Claude Code equivalents</b> (from the READMEs): <code>claude mcp add vectorcraft -- /path/to/vectorcraft-cli mcp</code> and <code>claude mcp add lightcraft -- "$PWD/target/release/lightcraft-cli" mcp ~/Pictures/shoot</code>.</p>
+<p><b>Caveats:</b> the <code>mcp</code> sub-command with these arguments is stated in the READMEs for <code>pdfcraft</code>, <code>photocraft</code>, <code>lightcraft</code>, <code>vectorcraft</code> and <code>filmcraft</code>. The <code>effectcraft</code> README also names <code>effectcraft-cli mcp</code>. For <code>designcraft</code> the README says an MCP server mode exists and points to <code>docs/mcp.md</code>, but the text I read did not give the exact sub-command. I assumed <code>mcp</code> by analogy with the others. Run <code>designcraft-cli --help</code> to confirm. The example paths and the <code>.exe</code> names are placeholders. I did not test any entry.</p>
+</div>
+
+<div class="card">
+<h3 style="color:var(--a1)">pdfcraft (Acrobat) — easiest start</h3>
+<p>Use it for PDF chores that you now do by hand. The server runs only while the agent starts it, opens no network port, and the <code>--root</code> flag limits file access to one folder. Config: <code>{"mcpServers":{"pdfcraft":{"command":"pdfcraft-cli","args":["mcp","--root","/path/to/your/pdfs"]}}}</code>.</p>
+<p><b>Example prompts</b> (copy, then change the file names):</p>
+<ul>
+<li><b>Assemble:</b> "Use the pdfcraft tools. In the folder I gave you, combine report.pdf and appendix.pdf into combined.pdf. Then delete page 5, rotate pages 1 and 2 by 90 degrees, set the title to 'Q3 Review', and save as final.pdf. Tell me the page count before and after."</li>
+<li><b>Split:</b> "Split annual-report.pdf into parts of 10 pages each in a parts/ folder. Then list each part with its first line of text, so I can name the files."</li>
+<li><b>Extract:</b> "From report.pdf, extract pages 1, 3 and 5 into highlights.pdf. Do not change the original."</li>
+<li><b>Read and summarise:</b> "Read paper.pdf page by page in reading order. Write a one-page summary in plain words. After each claim, give the page number."</li>
+<li><b>Search:</b> "Search every PDF in the folder for the word 'invoice'. Give me a table: file name, page number, and the sentence that contains the word."</li>
+<li><b>Inspect a form:</b> "Show the structure of form.pdf. List every field name and tell me which fields are empty."</li>
+<li><b>Safe first pass:</b> "Plan the edits and list them. Do not save until I say 'save'." (Edits stay in memory and can be undone until the agent saves.)</li>
+</ul>
+<p><b>Direct commands from the README:</b> <code>pdfcraft-cli combine report.pdf appendix.pdf --out combined.pdf</code>, <code>pdfcraft-cli split report.pdf --every 10 --out-dir parts/</code>, <code>pdfcraft-cli text paper.pdf --page 3</code>. Edits stay in memory and can be undone until the agent saves. The README says Office import and export is missing.</p>
+</div>
+
+<div class="card">
+<h3 style="color:var(--a1)">photocraft (Photoshop)</h3>
+<p>Use it to fix or batch-process pictures. It reads and writes PSD and PSB, PNG, JPEG, WebP, AVIF and others, and it has more than 500 registered commands. Start the server with <code>photocraft-cli mcp</code>.</p>
+<p><b>Example prompts:</b></p>
+<ul>
+<li><b>Fix one picture:</b> "Open wave.psd with photocraft. Apply Smart Sharpen at amount 80. Add a curves adjustment layer with the points (0,0), (64,48), (192,212), (255,255). Export wave-final.png. Then list the commands you ran, in order."</li>
+<li><b>Batch a folder:</b> "Write a grade.json action list that sharpens each image and lifts the contrast with a curves layer. Apply it to every image in ./raw. Save the results in ./graded. Do not overwrite ./raw."</li>
+<li><b>Find the right command:</b> "I want to remove a color cast. List the photocraft commands that relate to color balance. Pick one, run it on test.png, and show me the output file name."</li>
+<li><b>Convert formats:</b> "Convert all PNG files in ./assets to WebP and AVIF. Keep the same file names. Report the size of each file before and after."</li>
+<li><b>Check the layers:</b> "Open design.psd. List all layers by name and type. Tell me which layers are hidden."</li>
+<li><b>Attach to the app:</b> "Start photocraft with --control. Take a screenshot of the current canvas and tell me what you see." (The README says the control channel inspects UI state and takes screenshots.)</li>
+</ul>
+<p><b>Direct commands from the README:</b> <code>photocraft-cli run wave.psd --cmd filter.sharpen.smartSharpen --params '{"amount":80}' --out wave-final.png</code> and <code>photocraft-cli batch --actions grade.json --in ./raw --out ./graded</code>. HEIC photos are read-only and need a build option (<code>--features heif</code>).</p>
+</div>
+
+<div class="card">
+<h3 style="color:var(--a1)">lightcraft (Lightroom)</h3>
+<p>Use it to correct a whole folder of camera photos. It reads RAW files from Canon, Sony, Nikon, Fujifilm, Panasonic, Pentax, Olympus and DNG. CR3 files open only as embedded previews. Register with <code>claude mcp add lightcraft -- "$PWD/target/release/lightcraft-cli" mcp ~/Pictures/shoot</code>. A second mode, with <code>--connect 127.0.0.1:7980</code>, attaches to the running app so the agent can take screenshots and click.</p>
+<p><b>Example prompts:</b></p>
+<ul>
+<li><b>One RAW photo:</b> "Import in.dng. Set light.exposure to 0.7. Export out.jpg with the long edge at 2048 pixels. Show me the JSON result of each command."</li>
+<li><b>Learn the controls:</b> "List the develop controls. For each slider, give the range, the default and the current value. Group them into light, color and detail."</li>
+<li><b>Whole shoot:</b> "The library folder holds a wedding shoot. Apply exposure +0.5 to every photo. Export all as JPEG, long edge 2048, to ./web. Keep the originals unchanged."</li>
+<li><b>Compare:</b> "Render photo.jpg three times with light.exposure set to 0.3, 0.5 and 0.7. Save out-03.jpg, out-05.jpg and out-07.jpg. Tell me which looks best, and explain why."</li>
+<li><b>Check the RAW format:</b> "List which of my files will open as full RAW and which will open only as embedded previews." (The README says CR3 files open only as previews.)</li>
+<li><b>Undo:</b> "Make three exposure changes, then undo the last one." (A scripted burst of slider updates counts as one undo step.)</li>
+</ul>
+<p><b>Direct command from the README:</b> <code>lightcraft-cli render in.dng -o out.jpg --set light.exposure=0.7</code>. Agent actions are undoable. A scripted burst of slider updates counts as one undo step.</p>
+</div>
+
+<div class="card">
+<h3 style="color:var(--a1)">vectorcraft (Illustrator)</h3>
+<p>Use it for logos, icons and diagrams that stay sharp at any size. Native files are JSON (<code>.vectorcraft</code>). It imports and exports SVG and PDF, and PDF-compatible <code>.ai</code>. Register with <code>claude mcp add vectorcraft -- /path/to/vectorcraft-cli mcp</code>. The README says its bundled examples were built through the same command API that the MCP server exposes.</p>
+<p><b>Example prompts:</b></p>
+<ul>
+<li><b>New logo:</b> "Using vectorcraft, draw a logo: a blue circle (#1D4ED8), 200 units wide, with a white letter S in the center. Save it as logo.vectorcraft. Export logo.svg and logo.pdf."</li>
+<li><b>Variants:</b> "Open logo.vectorcraft. Make five color variants: red, green, orange, black and white-on-black. Export each as an SVG named logo-red.svg and so on."</li>
+<li><b>Icon set:</b> "Draw four simple icons on a 24 by 24 grid: home, search, mail, settings. Use a 2-unit stroke and no fill. Export each one as its own SVG."</li>
+<li><b>Convert:</b> "Open the .ai file I gave you. Export it as SVG and as PDF. Tell me anything that did not convert." (The README says .ai files are PDF-compatible.)</li>
+<li><b>Business card:</b> "Make a business card, 90 by 50 mm, with my name, title, e-mail and a thin line under the name. Export PDF. Ask me for the text before you start."</li>
+<li><b>Check an example:</b> "Run the example examples/ribbons.vectorcraft, export out.pdf, then describe what it contains layer by layer."</li>
+</ul>
+<p><b>Direct command from the README:</b> <code>cargo run --release -p vectorcraft-cli -- run --in examples/ribbons.vectorcraft --export out.pdf</code>.</p>
+</div>
+
+<div class="card">
+<h3 style="color:var(--a1)">designcraft (InDesign)</h3>
+<p>Use it for multi-page layouts: a flyer, a report, a magazine spread. It has spreads, parent pages, threaded text frames and styles. It imports and exports IDML and exports PNG. PDF export is planned. The README says AI agents can edit documents through a JSON channel and an MCP server. Headless rendering command: <code>cargo run --release -p designcraft-cli</code>.</p>
+<p><b>Example prompts:</b></p>
+<ul>
+<li><b>Magazine spread:</b> "Use designcraft. Create a two-page spread. Put a large headline across the top, the article text below it in three columns with threaded text frames, a pull quote in the middle, and a picture on the right page. Export PNG. The article is in article.txt."</li>
+<li><b>Styles:</b> "Create a paragraph style 'Body' (11 pt, justified) and a style 'Headline' (36 pt, bold). Apply 'Body' to all text frames except the title."</li>
+<li><b>One-page flyer:</b> "Make an A4 flyer for a bake sale on 12 November, 10:00 to 14:00. Use a big title, a short list of items, and the address at the bottom. Ask me for the address first."</li>
+<li><b>Repeating pages:</b> "Make a parent page with a page number at the bottom right and a thin line at the top. Make an 8-page document that uses it."</li>
+<li><b>Open an existing layout:</b> "Import brochure.idml. List the pages, the text frames and the styles. Then change the main font size in the 'Body' style to 10 pt and export PNG."</li>
+<li><b>Check line breaks:</b> "Render the document headless and check that no paragraph ends with a single word on its last line." (The README says line breaks match on screen and in PDF.)</li>
+</ul>
+<p>The video author made a magazine spread this way from one prompt. The README did not list exact CLI sub-commands for DesignCraft in the page text that I read, so ask the agent to read <code>AGENTS.md</code> and list the available commands.</p>
+</div>
+
+<div class="card">
+<h3 style="color:var(--a1)">effectcraft (After Effects)</h3>
+<p>Use it for animated graphics: logo reveals, titles, lower-thirds. It has compositions, layers, keyframes, 306 effects, expressions, 3D cameras and lights, a render queue, and Lottie import and export. Project files are readable JSON (<code>.ecproj</code>). It cannot open <code>.aep</code> files. It has <code>effectcraft-cli</code> with render, set-property and run-command functions, and an MCP server mode. The README did not give exact command strings in the text that I read.</p>
+<p><b>Example prompts:</b></p>
+<ul>
+<li><b>Logo reveal:</b> "Using effectcraft, make a 5-second composition, 1920 by 1080, 30 frames per second, dark navy background. Import logo.png. Scale it from 0 to 100 percent over the first second with an ease-out curve, sweep a lens flare across it at second 2, and fade everything out in the last 10 frames. Save the project as logo.ecproj and render an MP4."</li>
+<li><b>Title:</b> "Add a title 'Launch Day' that types on letter by letter, with a soft drop shadow. Show it from second 1 to second 4."</li>
+<li><b>Lower third:</b> "Make a lower-third bar for a speaker named 'Dr. Ada Lin, Researcher'. The bar slides in from the left, stays 4 seconds, then slides out. Render with a transparent background."</li>
+<li><b>Lottie:</b> "Export the animation as Lottie JSON for my website. Then list any effect that Lottie cannot express."</li>
+<li><b>Polish pass:</b> "List all the layers in logo.ecproj. Tell me which effects are applied to each layer. Suggest three changes that would make the motion feel smoother, and apply the ones I approve."</li>
+<li><b>Explore:</b> "List the effect categories. Show five effects I could use for a retro TV look and add two of them to the title layer."</li>
+</ul>
+<p>Because project files are readable JSON, you can ask: "Open the .ecproj file as text and explain what each layer does."</p>
+<p>The video author made a logo animation from one prompt, with editable layers. Ask the agent to run <code>effectcraft-cli</code> help first and to read <code>AGENTS.md</code>.</p>
+</div>
+
+<div class="card">
+<h3 style="color:var(--a1)">filmcraft (Premiere Pro)</h3>
+<p>Use it to cut video: join clips, trim, add titles, export. It has more than 650 engine commands. It decodes and encodes H.264, ProRes, DNxHD/DNxHR and MJPEG in MP4, MOV and Matroska. HEVC, VP9 and AV1 are decode-only. It exchanges projects with Final Cut Pro XML, OpenTimelineIO, EDL, AAF and OMF.</p>
+<p><b>Commands from the README:</b> <code>cargo run --release -p filmcraft-cli -- commands</code> lists every engine command. <code>cargo run --release -p filmcraft-cli -- mcp</code> starts the headless MCP server.</p>
+<p><b>Example prompts:</b></p>
+<ul>
+<li><b>Discover first:</b> "Run filmcraft-cli commands. Group the engine commands by task (import, cut, audio, titles, export) and show me the ten I will need most."</li>
+<li><b>Simple edit:</b> "Create a sequence. Place intro.mp4, then demo.mp4. Trim the first 3 seconds off demo.mp4. Add a 1-second cross dissolve between them. Export H.264 in an MP4."</li>
+<li><b>Silence removal:</b> "Remove silences longer than 1 second from interview.mp4. Keep 0.2 seconds of padding. Export interview-tight.mp4. Tell me how much time you removed."</li>
+<li><b>Music bed:</b> "Add music.mp3 under the whole sequence. Lower it to -18 dB where someone speaks. Fade it out over the last 2 seconds."</li>
+<li><b>Titles:</b> "Add a title at second 2 with the text 'Season Opener' and an opening position and scale animation."</li>
+<li><b>Hand off to an editor:</b> "Export the timeline as a CMX 3600 EDL and as OpenTimelineIO so a colleague can open it in another editor."</li>
+<li><b>Scale cut:</b> "Take my 40-minute recording, find five 30-second highlights, and put them in one sequence with title cards between them. Show me the list of cuts before you render."</li>
+</ul>
+<p>Some of these prompts depend on commands that exist only if the command list shows them. Ask the agent to check the list and report any step it cannot do. The README lists import, export, codec and interchange formats. It does not list a silence-removal command, a music-ducking command or a highlight finder, so the agent may need to combine other commands or tell you that it cannot do the step.</p>
+</div>
+
+<p><b>Suggested order for a beginner:</b> start with <code>pdfcraft</code>, because the task (combine, split, read PDFs) needs no design knowledge. Then try <code>vectorcraft</code> for a logo, then <code>effectcraft</code> to animate it. This order is my suggestion. It is not from the sources.</p>
+<p><b>Caution:</b> the video author rates the agent output as a first draft ("somewhat okay, not always the best"). Expect to open the result in the app and adjust it.</p>
+
+<h2>Practical takeaways</h2>
+<p>The video argues that these tools still matter in a market with strong image and video generators, because generated output is hard to polish and layered tools give control over each element. The strongest evidence offered is two single-prompt tests by one reviewer. Treat the maturity of each application as unmeasured. Only <code>effectcraft</code> has a stated limit (no <code>.aep</code> import), and only <code>designcraft</code> has a stated gap (no PDF export). The video reports 20,000 stars on <code>photocraft</code> a few hours after launch; the org page showed 23k on 2026-10-08.</p>
+
+<h2>Not verified</h2>
+<p>I did not read source code, so the clean-room claim is unchecked. I read the READMEs of the five other Adobe-mapped repos only for their command line and agent sections. I did not run any application or any command. The Codex configuration syntax comes from the OpenAI Codex MCP documentation not from the READMEs. I did not test the entries for these apps. The README text I read for <code>effectcraft</code> and <code>designcraft</code> gave no exact CLI command strings.</p>
+</main>
+</body>
+</html>
