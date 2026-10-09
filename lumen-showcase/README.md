@@ -2,6 +2,26 @@
 
 A production test: one fictional client, no input files, every artifact made by an open-source Artcraft "craft" app driven by Claude Code. The story of the build — design decisions, failures, fixes and what each craft can do — is in [`DEVELOPMENT-JOURNEY.html`](DEVELOPMENT-JOURNEY.html). The file index with verification notes is [`projects/DELIVERABLES.md`](projects/DELIVERABLES.md).
 
+## Demos — play them
+
+The animations below play right here (silent previews). Click one to play the full video with sound in your browser.
+
+| :30 launch spot (filmcraft) | 9:16 :15 cutdown (filmcraft) |
+|---|---|
+| [![30-second spot](demo/spot-30s.gif)](https://az9713.github.io/artcraft-tutorial/lumen-showcase/projects/filmcraft/out/lumen-ember-ridge-30_1080p30_h264.mp4) | [![15-second vertical spot](demo/spot-15s-vertical.gif)](https://az9713.github.io/artcraft-tutorial/lumen-showcase/projects/filmcraft/out/lumen-ember-ridge-15_1080x1920_h264.mp4) |
+
+| Logo sting (effectcraft) | Lower third, transparent background (effectcraft) |
+|---|---|
+| [![Logo sting](demo/logo-sting.gif)](https://az9713.github.io/artcraft-tutorial/lumen-showcase/projects/effectcraft/out/renders/lumen-logo-sting_1080p30.mp4) | [![Lower third](demo/lower-third.gif)](https://az9713.github.io/artcraft-tutorial/lumen-showcase/projects/effectcraft/out/renders/lower-third-mara_prores4444_alpha.mov) |
+
+More to play in the browser:
+- **All demos on one page** (spots, web sting, logos, press kit): https://az9713.github.io/artcraft-tutorial/lumen-showcase/projects/_qc/index.html
+- **Web logo animation as Lottie** (live vectors, on a transparency checkerboard): https://az9713.github.io/artcraft-tutorial/lumen-showcase/projects/_qc/lottie.html
+- **Development journey** (how each craft was used, with pictures): https://az9713.github.io/artcraft-tutorial/lumen-showcase/DEVELOPMENT-JOURNEY.html
+- **Music only** (ElevenLabs jingle): https://az9713.github.io/artcraft-tutorial/lumen-showcase/projects/filmcraft/music/lumen-jingle-30s.mp3
+
+The lower third is ProRes 4444 with alpha. Most browsers cannot play ProRes, so that link downloads the file.
+
 ## What differs from the local build
 
 - **Not included:** the ProRes 422 HQ master (541 MB) and the ProRes 422 Proxy (158 MB) are over GitHub's 100 MB file limit. The H.264 MP4 shows the same edit. `filmcraft/build_spot.py` rebuilds both.
