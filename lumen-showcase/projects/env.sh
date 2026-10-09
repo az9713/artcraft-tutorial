@@ -1,0 +1,10 @@
+# Source with: . projects/env.sh   (then call "$vec" "$photo" "$light" "$fx" "$film" "$dsg" "$pdf")
+P="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+A="$(dirname "$P")/apps"
+pdf="$A/pdfcraft/bin/pdfcraft-0.4.0-windows-x64-portable/pdfcraft-cli.exe"
+photo="$A/photocraft/bin/photocraft-0.5.0-windows-x64-portable/photocraft-cli.exe"
+light="$A/lightcraft/bin/lightcraft-0.4.0-windows-x64-portable/lightcraft-cli.exe"
+vec="$A/vectorcraft/bin/vectorcraft-0.7.0-windows-x64-portable/vectorcraft-cli.exe"
+film="$A/filmcraft/bin/filmcraft-0.4.0-windows-x64-portable/filmcraft-cli.exe"
+fx="$A/effectcraft/bin/effectcraft-0.6.0-windows-x64-portable/effectcraft-cli.exe"
+dsg="$A/designcraft/bin/designcraft-0.4.0-windows-x64-portable/designcraft-cli.exe"

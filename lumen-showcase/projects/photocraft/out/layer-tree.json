@@ -1,0 +1,2075 @@
+{
+ "activeLayer": 80,
+ "canRedo": false,
+ "canUndo": true,
+ "channels": {
+  "alpha": [],
+  "colors": [
+   {
+    "name": "Red",
+    "visible": true
+   },
+   {
+    "name": "Green",
+    "visible": true
+   },
+   {
+    "name": "Blue",
+    "visible": true
+   }
+  ],
+  "composite": "RGB",
+  "compositeVisible": true,
+  "layerMaskView": null,
+  "quickMask": null,
+  "target": {
+   "kind": "composite"
+  }
+ },
+ "depth": 16,
+ "hasSelection": false,
+ "height": 2000,
+ "history": [
+  "Layer Properties",
+  "Duplicate Layer",
+  "Free Transform",
+  "Layer Properties",
+  "Duplicate Layer",
+  "Free Transform",
+  "Layer Properties",
+  "Duplicate Layer",
+  "Free Transform",
+  "Layer Properties",
+  "Duplicate Layer",
+  "Free Transform",
+  "Layer Properties",
+  "Duplicate Layer",
+  "Free Transform",
+  "Layer Properties",
+  "Duplicate Layer",
+  "Free Transform",
+  "Layer Properties",
+  "Duplicate Layer",
+  "Free Transform",
+  "Layer Properties",
+  "Duplicate Layer",
+  "Free Transform",
+  "Layer Properties",
+  "Duplicate Layer",
+  "Free Transform",
+  "Layer Properties",
+  "Duplicate Layer",
+  "Free Transform",
+  "Layer Properties",
+  "Duplicate Layer",
+  "Free Transform",
+  "Layer Properties",
+  "Duplicate Layer",
+  "Free Transform",
+  "Layer Properties",
+  "Layer Properties",
+  "Group Layers",
+  "New Gradient Fill Layer",
+  "Layer Properties",
+  "New Curves Layer",
+  "Layer Properties",
+  "New Color Balance Layer",
+  "Layer Properties",
+  "New Vibrance Layer",
+  "Layer Properties",
+  "New Layer",
+  "Fill",
+  "Add Noise",
+  "Layer Properties"
+ ],
+ "isolatedLayers": [],
+ "lastAppliedComp": null,
+ "layerComps": [],
+ "layerMaskView": null,
+ "layers": [
+  {
+   "blend": "Overlay",
+   "bounds": [
+    0,
+    0,
+    3000,
+    2000
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 80,
+   "kind": "Pixel",
+   "linkGroup": null,
+   "name": "Film grain",
+   "opacity": 0.5,
+   "selected": true,
+   "visible": true
+  },
+  {
+   "adjustment": {
+    "Vibrance": {
+     "saturation": 0.0,
+     "vibrance": 12.0
+    }
+   },
+   "blend": "Normal",
+   "bounds": null,
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 79,
+   "kind": "Adjustment",
+   "linkGroup": null,
+   "name": "Vibrance",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "adjustment": {
+    "ColorBalance": {
+     "highlights": [
+      4.0,
+      0.0,
+      -10.0
+     ],
+     "midtones": [
+      6.0,
+      0.0,
+      -8.0
+     ],
+     "preserve_luminosity": true,
+     "shadows": [
+      0.0,
+      0.0,
+      -6.0
+     ]
+    }
+   },
+   "blend": "Normal",
+   "bounds": null,
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 78,
+   "kind": "Adjustment",
+   "linkGroup": null,
+   "name": "Colour balance (warm)",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "adjustment": {
+    "Curves": {
+     "black": [],
+     "master": [
+      {
+       "input": 0.0,
+       "output": 0.0313725508749485
+      },
+      {
+       "input": 0.250980406999588,
+       "output": 0.20392157137393951
+      },
+      {
+       "input": 0.501960813999176,
+       "output": 0.501960813999176
+      },
+      {
+       "input": 0.7529411911964417,
+       "output": 0.8078431487083435
+      },
+      {
+       "input": 1.0,
+       "output": 0.9803921580314636
+      }
+     ],
+     "per_channel": [
+      [
+       {
+        "input": 0.0,
+        "output": 0.0
+       },
+       {
+        "input": 1.0,
+        "output": 1.0
+       }
+      ],
+      [
+       {
+        "input": 0.0,
+        "output": 0.0
+       },
+       {
+        "input": 1.0,
+        "output": 1.0
+       }
+      ],
+      [
+       {
+        "input": 0.0,
+        "output": 0.0
+       },
+       {
+        "input": 1.0,
+        "output": 1.0
+       }
+      ]
+     ],
+     "space": "Rgb"
+    }
+   },
+   "blend": "Normal",
+   "bounds": null,
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 77,
+   "kind": "Adjustment",
+   "linkGroup": null,
+   "name": "Curves (contrast)",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Soft Light",
+   "bounds": null,
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 76,
+   "kind": "Fill",
+   "linkGroup": null,
+   "name": "Key light wrap",
+   "opacity": 0.3499999940395355,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Pass Through",
+   "bounds": null,
+   "children": [
+    {
+     "blend": "Normal",
+     "bounds": [
+      583,
+      1651,
+      81,
+      81
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 39,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 01",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      583,
+      1698,
+      89,
+      74
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 40,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 02",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      585,
+      1588,
+      80,
+      73
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 41,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 03",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      640,
+      1645,
+      77,
+      83
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 42,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 04",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      577,
+      1663,
+      76,
+      86
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 43,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 05",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      630,
+      1713,
+      73,
+      92
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 44,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 06",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      671,
+      1672,
+      89,
+      66
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 45,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 07",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      513,
+      1617,
+      84,
+      63
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 46,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 08",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      631,
+      1721,
+      75,
+      91
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 47,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 09",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      601,
+      1662,
+      88,
+      66
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 48,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 10",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      665,
+      1586,
+      72,
+      81
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 49,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 11",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      565,
+      1682,
+      78,
+      85
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 50,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 12",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      702,
+      1646,
+      77,
+      84
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 51,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 13",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      639,
+      1678,
+      89,
+      69
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 52,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 14",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      2400,
+      1634,
+      64,
+      85
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 53,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 15",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      2372,
+      1611,
+      64,
+      85
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 54,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 16",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      1951,
+      1663,
+      76,
+      85
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 55,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 17",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      2174,
+      1743,
+      74,
+      94
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 56,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 18",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      2378,
+      1629,
+      77,
+      82
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 57,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 19",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      2400,
+      1643,
+      80,
+      79
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 58,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 20",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      2274,
+      1688,
+      90,
+      71
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 59,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 21",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      2306,
+      1741,
+      78,
+      91
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 60,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 22",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      2375,
+      1714,
+      76,
+      92
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 61,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 23",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      2373,
+      1725,
+      83,
+      85
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 62,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 24",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      2216,
+      1656,
+      65,
+      86
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 63,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 25",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      2233,
+      1722,
+      72,
+      93
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 64,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 26",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      2259,
+      1824,
+      77,
+      99
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 65,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 27",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      2183,
+      1638,
+      81,
+      78
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 66,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 28",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      2394,
+      1774,
+      72,
+      95
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 67,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 29",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      2349,
+      1751,
+      94,
+      73
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 68,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 30",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      1824,
+      1790,
+      94,
+      79
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 69,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 31",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      1093,
+      1733,
+      73,
+      93
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 70,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 32",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      1704,
+      1642,
+      87,
+      66
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 71,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 33",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      1463,
+      1825,
+      92,
+      88
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 72,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 34",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      1373,
+      1876,
+      90,
+      94
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 73,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 35",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    },
+    {
+     "blend": "Normal",
+     "bounds": [
+      1605,
+      2050,
+      92,
+      111
+     ],
+     "clipped": false,
+     "effects": {
+      "enabled": true,
+      "items": [
+       {
+        "enabled": true,
+        "kind": "Bevel & Emboss"
+       },
+       {
+        "enabled": true,
+        "kind": "Drop Shadow"
+       }
+      ]
+     },
+     "fill": 1.0,
+     "hasMask": false,
+     "id": 74,
+     "kind": "Smart Object",
+     "linkGroup": null,
+     "name": "Bean 36",
+     "opacity": 1.0,
+     "selected": false,
+     "smartFilters": [],
+     "smartFiltersEnabled": true,
+     "visible": true
+    }
+   ],
+   "clipped": false,
+   "expanded": true,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 75,
+   "kind": "Group",
+   "linkGroup": null,
+   "name": "Beans",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Normal",
+   "bounds": [
+    163,
+    150,
+    74,
+    100
+   ],
+   "clipped": false,
+   "effects": {
+    "enabled": true,
+    "items": [
+     {
+      "enabled": true,
+      "kind": "Bevel & Emboss"
+     },
+     {
+      "enabled": true,
+      "kind": "Drop Shadow"
+     }
+    ]
+   },
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 38,
+   "kind": "Smart Object",
+   "linkGroup": null,
+   "name": "Bean master (hidden)",
+   "opacity": 1.0,
+   "selected": false,
+   "smartFilters": [],
+   "smartFiltersEnabled": true,
+   "visible": false
+  },
+  {
+   "blend": "Normal",
+   "bounds": [
+    1486,
+    526,
+    29,
+    28
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 35,
+   "kind": "Shape",
+   "linkGroup": null,
+   "name": "Valve core",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Normal",
+   "bounds": [
+    1466,
+    506,
+    69,
+    68
+   ],
+   "clipped": false,
+   "effects": {
+    "enabled": true,
+    "items": [
+     {
+      "enabled": true,
+      "kind": "Bevel & Emboss"
+     }
+    ]
+   },
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 34,
+   "kind": "Shape",
+   "linkGroup": null,
+   "name": "Valve",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Normal",
+   "bounds": [
+    1150,
+    592,
+    700,
+    980
+   ],
+   "clipped": true,
+   "effects": {
+    "enabled": true,
+    "items": [
+     {
+      "enabled": true,
+      "kind": "Gradient Overlay"
+     }
+    ]
+   },
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 33,
+   "kind": "Smart Object",
+   "linkGroup": null,
+   "name": "Label (vectorcraft)",
+   "opacity": 1.0,
+   "selected": false,
+   "smartFilters": [],
+   "smartFiltersEnabled": true,
+   "visible": true
+  },
+  {
+   "blend": "Normal",
+   "bounds": [
+    1150,
+    592,
+    701,
+    980
+   ],
+   "clipped": false,
+   "effects": {
+    "enabled": true,
+    "items": [
+     {
+      "enabled": true,
+      "kind": "Drop Shadow"
+     }
+    ]
+   },
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 28,
+   "kind": "Shape",
+   "linkGroup": null,
+   "name": "Label die-cut",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Multiply",
+   "bounds": [
+    1860,
+    480,
+    140,
+    1110
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 27,
+   "kind": "Shape",
+   "linkGroup": null,
+   "name": "Gusset right",
+   "opacity": 0.550000011920929,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Multiply",
+   "bounds": [
+    1000,
+    480,
+    140,
+    1110
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 26,
+   "kind": "Shape",
+   "linkGroup": null,
+   "name": "Gusset left",
+   "opacity": 0.550000011920929,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Normal",
+   "bounds": [
+    1030,
+    488,
+    940,
+    4
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 25,
+   "kind": "Shape",
+   "linkGroup": null,
+   "name": "Tear notch line",
+   "opacity": 0.6000000238418579,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Normal",
+   "bounds": [
+    1030,
+    458,
+    940,
+    4
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 24,
+   "kind": "Shape",
+   "linkGroup": null,
+   "name": "Crimp 7",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Normal",
+   "bounds": [
+    1030,
+    445,
+    940,
+    4
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 23,
+   "kind": "Shape",
+   "linkGroup": null,
+   "name": "Crimp 6",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Normal",
+   "bounds": [
+    1030,
+    432,
+    940,
+    4
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 22,
+   "kind": "Shape",
+   "linkGroup": null,
+   "name": "Crimp 5",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Normal",
+   "bounds": [
+    1030,
+    419,
+    940,
+    4
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 21,
+   "kind": "Shape",
+   "linkGroup": null,
+   "name": "Crimp 4",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Normal",
+   "bounds": [
+    1030,
+    406,
+    940,
+    4
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 20,
+   "kind": "Shape",
+   "linkGroup": null,
+   "name": "Crimp 3",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Normal",
+   "bounds": [
+    1030,
+    393,
+    940,
+    4
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 19,
+   "kind": "Shape",
+   "linkGroup": null,
+   "name": "Crimp 2",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Normal",
+   "bounds": [
+    1030,
+    380,
+    940,
+    4
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 18,
+   "kind": "Shape",
+   "linkGroup": null,
+   "name": "Crimp 1",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Normal",
+   "bounds": [
+    1000,
+    360,
+    1001,
+    120
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 17,
+   "kind": "Shape",
+   "linkGroup": null,
+   "name": "Seal band",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Normal",
+   "bounds": [
+    1000,
+    360,
+    1001,
+    1260
+   ],
+   "clipped": false,
+   "effects": {
+    "enabled": true,
+    "items": [
+     {
+      "enabled": true,
+      "kind": "Inner Glow"
+     },
+     {
+      "enabled": true,
+      "kind": "Inner Shadow"
+     }
+    ]
+   },
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 16,
+   "kind": "Shape",
+   "linkGroup": null,
+   "name": "Bag body",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Multiply",
+   "bounds": [
+    898,
+    1521,
+    1204,
+    198
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 15,
+   "kind": "Smart Object",
+   "linkGroup": null,
+   "name": "Contact shadow",
+   "opacity": 0.800000011920929,
+   "selected": false,
+   "smartFilters": [
+    {
+     "blend": "Normal",
+     "command": "filter.blur.gaussianBlur",
+     "opacity": 1.0,
+     "params": {
+      "radius": 22
+     },
+     "visible": true
+    }
+   ],
+   "smartFiltersEnabled": true,
+   "visible": true
+  },
+  {
+   "blend": "Multiply",
+   "bounds": [
+    509,
+    1219,
+    1982,
+    781
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 12,
+   "kind": "Smart Object",
+   "linkGroup": null,
+   "name": "Ambient shadow",
+   "opacity": 0.44999998807907104,
+   "selected": false,
+   "smartFilters": [
+    {
+     "blend": "Normal",
+     "command": "filter.blur.gaussianBlur",
+     "opacity": 1.0,
+     "params": {
+      "radius": 110
+     },
+     "visible": true
+    }
+   ],
+   "smartFiltersEnabled": true,
+   "visible": true
+  },
+  {
+   "blend": "Normal",
+   "bounds": [
+    0,
+    1380,
+    3000,
+    6
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 9,
+   "kind": "Shape",
+   "linkGroup": null,
+   "name": "Table edge light",
+   "opacity": 0.5,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Overlay",
+   "bounds": [
+    0,
+    0,
+    3000,
+    2000
+   ],
+   "clipped": true,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 8,
+   "kind": "Pixel",
+   "linkGroup": null,
+   "name": "Wood grain",
+   "opacity": 0.44999998807907104,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Normal",
+   "bounds": [
+    0,
+    1380,
+    3000,
+    620
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 7,
+   "kind": "Shape",
+   "linkGroup": null,
+   "name": "Tabletop",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Screen",
+   "bounds": [
+    0,
+    0,
+    3000,
+    2000
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 6,
+   "kind": "Smart Object",
+   "linkGroup": null,
+   "name": "Backdrop bloom",
+   "opacity": 0.550000011920929,
+   "selected": false,
+   "smartFilters": [
+    {
+     "blend": "Normal",
+     "command": "filter.blur.gaussianBlur",
+     "opacity": 1.0,
+     "params": {
+      "radius": 260
+     },
+     "visible": true
+    }
+   ],
+   "smartFiltersEnabled": true,
+   "visible": true
+  },
+  {
+   "blend": "Normal",
+   "bounds": null,
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 3,
+   "kind": "Fill",
+   "linkGroup": null,
+   "name": "Backdrop",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  },
+  {
+   "blend": "Normal",
+   "bounds": [
+    0,
+    0,
+    3000,
+    2000
+   ],
+   "clipped": false,
+   "fill": 1.0,
+   "hasMask": false,
+   "id": 2,
+   "kind": "Pixel",
+   "linkGroup": null,
+   "name": "Background",
+   "opacity": 1.0,
+   "selected": false,
+   "visible": true
+  }
+ ],
+ "measurement": {
+  "count": 0,
+  "countGroups": 0,
+  "ruler": null,
+  "scale": "1 pixels = 1.0000 pixels"
+ },
+ "mode": "Rgb",
+ "name": "lumen-ember-ridge-hero",
+ "notes": [],
+ "quickMask": false,
+ "resolution": 72.0,
+ "revision": 251,
+ "selectedLayers": [
+  80
+ ],
+ "selectionBounds": null,
+ "timeline": null,
+ "variables": null,
+ "width": 3000
+}

@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Seven Crafts Journey</title>
+<style>
+  :root { --bg:#0f172a; --card:#1e293b; --text:#e2e8f0; --text2:#cbd5e1; --muted:#94a3b8;
+          --orange:#fb923c; --teal:#2dd4bf; --border:#334155; --red:#f87171; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text2); font:16px/1.65 system-ui, "Segoe UI", sans-serif; }
+  main { max-width:920px; margin:0 auto; padding:32px 16px 80px; }
+  h1 { color:var(--text); font-size:1.85rem; line-height:1.2; margin:0 0 12px; }
+  h2 { color:var(--text); font-size:1.35rem; margin:48px 0 12px; padding-bottom:6px; border-bottom:1px solid var(--border); }
+  h3 { color:var(--text); font-size:1.1rem; margin:30px 0 8px; }
+  h4 { color:var(--orange); font-size:.95rem; margin:18px 0 6px; text-transform:uppercase; letter-spacing:.06em; }
+  a { color:var(--teal); }
+  code { background:#0b1222; border:1px solid var(--border); border-radius:4px; padding:1px 5px; font-size:.86em; color:var(--teal); word-break:break-word; }
+  pre { background:#0b1222; border:1px solid var(--border); border-radius:8px; padding:12px; overflow-x:auto; font-size:.85em; color:var(--text2); }
+  .meta { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:14px 18px; font-size:.93rem; }
+  .meta div { margin:4px 0; }
+  .meta b { color:var(--text); }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:14px 18px; margin:16px 0; }
+  .note { border-color:#7c4a1e; background:#22242c; }
+  .rule { border-color:#1f5e57; background:#16302f; color:var(--text); }
+  .wart { border-color:#7f2d2d; background:#2a1f26; }
+  blockquote { margin:10px 0; padding:8px 14px; border-left:3px solid var(--muted); color:var(--text); background:#132036; border-radius:0 6px 6px 0; }
+  .tablewrap { overflow-x:auto; margin:12px 0; }
+  table { width:100%; border-collapse:collapse; font-size:.9rem; }
+  th, td { text-align:left; vertical-align:top; padding:7px 9px; border-bottom:1px solid var(--border); }
+  th { color:var(--text); background:#17233a; }
+  strong { color:var(--text); }
+  li { margin:5px 0; }
+  .gallery { display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:12px; margin:14px 0; }
+  figure { margin:0; background:var(--card); border:1px solid var(--border); border-radius:8px; overflow:hidden; }
+  figure img { width:100%; height:200px; object-fit:contain; background:#0b1222; display:block; }
+  figcaption { font-size:.8rem; color:var(--muted); padding:6px 9px; }
+  .toc { columns:2; column-gap:28px; font-size:.92rem; }
+  .toc li { break-inside:avoid; }
+  @media (max-width:640px) { .toc { columns:1; } }
+  .tag { display:inline-block; font-size:.72rem; padding:1px 7px; border-radius:10px; border:1px solid var(--border); color:var(--muted); margin-left:6px; vertical-align:2px; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Development Journey — Seven open-source "craft" apps make one coffee launch</h1>
+
+<div class="meta">
+  <div><b>Dates:</b> 2026-10-08 to 2026-10-09 (transcript times are UTC)</div>
+  <div><b>Deliverables:</b> <code>projects/</code> in the workspace folder <code>artcraft_jay_E</code>, index in <code>projects/DELIVERABLES.md</code>; the earlier tutorial page at <a href="https://az9713.github.io/artcraft-tutorial/">az9713.github.io/artcraft-tutorial</a></div>
+  <div><b>Client:</b> "Lumen Coffee Roasters — Ember Ridge launch" (fictional)</div>
+  <div><b>Apps:</b> the 7 Artcraft "craft" apps from the <code>storytold</code> GitHub organisation, Windows portable builds v0.4–0.7</div>
+  <div><b>Driver:</b> Claude Code, model Opus 5.5, effort "high" (set by the user at 2026-10-09 03:12)</div>
+</div>
+
+<div class="card note">
+<p style="margin-top:0"><strong>How this document was made, and what it cannot show.</strong> It covers two Claude Code sessions. Session 1 (<code>1db109c8…jsonl</code>, 2026-10-08 13:29 to 2026-10-09 13:36) did the research report and the production build. Session 2 (the current one) replaced the music, explained the old score, started the demo server and wrote this page. Session 1 material is reconstructed from its saved transcript file with a small extraction script, from <code>HANDOFF.md</code>, <code>DELIVERABLES.md</code>, the build scripts and their build logs.</p>
+<p>Two limits apply. (1) Three user entries in the session 1 file at 21:34 are stored in an unreadable encoded form. The "no toy projects" rule below is quoted from the memory file written one minute later, <code>memory/production-grade-no-toys.md</code>. (2) The images the agent looked at, the Chrome screenshots and the agent's reasoning are not in the file. The verification claims for session 1 are therefore the agent's own reports at the time, not re-checked here unless this page says so.</p>
+<p style="margin-bottom:0">The per-craft design facts in section 3 and the consistency audit in section 4 come from one research subagent that read all 11 build files in session 2. Line references such as <code>build_identity.py:22-29</code> are its findings.</p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+  <li><a href="#map">Reader's map: the 7 crafts</a></li>
+  <li><a href="#brief">1. The briefs</a></li>
+  <li><a href="#setup">2. Cold start: research, install, first logo</a></li>
+  <li><a href="#crafts">3. The build, craft by craft</a></li>
+  <li><a href="#consistency">4. The crux: one style and one message across 7 apps</a></li>
+  <li><a href="#tools">5. Tools and features used</a></li>
+  <li><a href="#wrong">6. What went wrong, and the fixes</a></li>
+  <li><a href="#music">7. Session 2: the music that failed</a></li>
+  <li><a href="#verify">8. Verification</a></li>
+  <li><a href="#costs">9. Costs, limits and agents</a></li>
+  <li><a href="#stand">10. Where things stand</a></li>
+</ol>
+
+<h2 id="map">Reader's map: the 7 crafts</h2>
+<p>Artcraft is a set of free, open-source desktop apps. Each one is a "clean-room" rebuild of a well-known Adobe app: it does the same job with similar concepts, but it is written from scratch and does not open Adobe's own project files in all cases. Each craft also has a command-line program (<code>&lt;name&gt;-cli.exe</code>) with an <code>mcp</code> mode. MCP (Model Context Protocol) is the standard way an AI agent such as Claude Code calls a program's functions. That is why an agent, not a person, could drive all seven apps in this project.</p>
+<div class="tablewrap"><table>
+<tr><th>Craft</th><th>Adobe equivalent</th><th>What it is for, in plain words</th><th>What it made here</th></tr>
+<tr><td><strong>vectorcraft</strong> 0.7.0</td><td>Illustrator</td><td>Drawing with shapes and curves, not pixels. Logos stay sharp at any size.</td><td>Logo, colour palette, bag label, business cards, print files, app icons</td></tr>
+<tr><td><strong>photocraft</strong> 0.5.0</td><td>Photoshop</td><td>Editing and compositing pixel images in layers.</td><td>A 67-layer product "photo" of the coffee bag, built from nothing; social-media crops</td></tr>
+<tr><td><strong>lightcraft</strong> 0.4.0</td><td>Lightroom</td><td>Managing a photo library and giving a whole shoot one consistent colour "look".</td><td>A graded 4-photo series, exported for web, screen and print</td></tr>
+<tr><td><strong>effectcraft</strong> 0.6.0</td><td>After Effects</td><td>Motion graphics: animated logos, titles, overlays.</td><td>Logo animation, title card, name captions, end card, a web animation</td></tr>
+<tr><td><strong>filmcraft</strong> 0.4.0</td><td>Premiere Pro</td><td>Video editing: putting clips on a timeline with sound and captions.</td><td>A 30-second launch video and a 15-second vertical cut</td></tr>
+<tr><td><strong>designcraft</strong> 0.4.0</td><td>InDesign</td><td>Page layout for multi-page documents: brochures, books, guidelines.</td><td>A 12-page brand-guidelines book</td></tr>
+<tr><td><strong>pdfcraft</strong> 0.4.0</td><td>Acrobat</td><td>Assembling, organising, checking and protecting PDF files.</td><td>A 19-page press kit, a product sheet and a password-protected copy</td></tr>
+</table></div>
+
+<div class="gallery">
+  <figure><img src="journey-img/vec-logo.png" alt="Lumen logo: sun ring with coffee bean, LUMEN wordmark"><figcaption>vectorcraft — primary logo</figcaption></figure>
+  <figure><img src="journey-img/photo-hero.jpg" alt="Coffee bag with Ember Ridge label on a wooden table with beans"><figcaption>photocraft — product hero, built from shapes, gradients and filters</figcaption></figure>
+  <figure><img src="journey-img/film-21.jpg" alt="Video frame of the bag with a lower-third caption"><figcaption>filmcraft — frame from the :30 spot, with effectcraft's lower third</figcaption></figure>
+</div>
+
+<h2 id="brief">1. The briefs — what was actually being asked</h2>
+<p>The work grew from three prompts. Each one changed the scope.</p>
+<p><strong>Brief 1, 2026-10-08 13:29 — research.</strong></p>
+<blockquote>Read @transcript.txt.<br>scan https://github.com/orgs/storytold/repositories<br>explain how the repositories map to Adobe applications<br>AMIAQ</blockquote>
+<p><code>transcript.txt</code> is the transcript of the YouTube video "Someone Just Rebuilt Adobe for Free, and Claude Can Run Them All (7 apps tested)" by Jay E | RoboNuggets. "AMIAQ" means "ask me if any question"; at 13:32 the user asked the agent to remember that, and it became the memory file <code>amiqa-ask-questions.md</code>. The agent found 41 repositories in the organisation, of which 12 are crafts and 7 map to Adobe apps.</p>
+
+<p><strong>Brief 2, 2026-10-08 21:31 — build something.</strong></p>
+<blockquote>Can we create at least one project per craft starting with no input? Every artifact will be created by the crafts. AMIAQ</blockquote>
+<p>The agent asked 4 questions in one form, and the user took the recommended option each time: install from the release files (not build from source); "no input" means generate everything from scratch; photocraft and lightcraft get craft-made images only (no stock photos, no AI images); outputs stay in a local folder. While the agent drew a first test logo, the user added the rule that set the quality bar for everything after it:</p>
+<blockquote>I want no trivial projects as if I am an experienced creative professional using the crafts for production work. No toy projects.</blockquote>
+<p>(Quoted from <code>memory/production-grade-no-toys.md</code>; see the note at the top.) The agent answered with a production plan for one fictional client, Lumen Coffee Roasters, in which each craft feeds the next.</p>
+
+<p><strong>Brief 3, 2026-10-09 03:13 — execute, with a stop condition.</strong> The user set the model to Opus 5.5 and effort to "high", then used <code>/goal</code>:</p>
+<blockquote>please execute the production plan with human in the loop. success is defined by using each and every of the craft tools to produce one or more production grade artifact. use computer use/playwright/cdp tools to verify your work.</blockquote>
+<p><code>/goal</code> installs a Stop hook: the session cannot end until the condition holds. In practice "human in the loop" meant very little here. The user made no further prompt during the 47-minute build (03:13 to 04:00). The loop was the agent looking at its own renders.</p>
+
+<p><strong>Interpretations made silently.</strong> "Production grade" was read as print and broadcast specifications: CMYK colour, spot inks, 3 mm bleed, PDF/X-4, 16-bit images, ProRes with transparency, loudness targets, interchange files. "Starting with no input" was read strictly: even the product "photos" are renders that photocraft draws from shapes, and lightcraft grades those renders as if they were a camera shoot.</p>
+
+<h2 id="setup">2. Cold start — research, install, first logo</h2>
+<h3>Phase A: the research report (2026-10-08 13:29–15:20)</h3>
+<p>Seven prompts built one HTML report, <code>summaries/artcraft-adobe-map-github.html</code>: the mapping table; usage examples for a non-designer (the user wrote "i am not an Adobe user. no experience with creative designs"); 6–7 example prompts per craft ("beef up the example prompts"); the Codex MCP config syntax (<code>~/.codex/config.toml</code>, <code>[mcp_servers.&lt;name&gt;]</code>); install steps written as natural-language prompts; and finally a README and a public GitHub Pages site. The page went live at <a href="https://az9713.github.io/artcraft-tutorial/">az9713.github.io/artcraft-tutorial</a> (repo <code>az9713/artcraft-tutorial</code>, commit <code>cb83523</code>).</p>
+<p>Two warts from this phase. The agent called the Adobe set "six apps" in several places before it counted seven and corrected the report. And before it published, it removed from the public copy a reference to the local <code>transcript.txt</code> and two mentions of the user's own Codex <code>config.toml</code>, including one MCP server name. So the published page and the local file differ on purpose.</p>
+
+<h3>Phase B: install and the first logo (2026-10-08 21:31–21:35)</h3>
+<ol>
+  <li>The agent checked the machine: Windows 11, CPU i5-12450H, Rust 1.93.0 (too old for effectcraft's source build, which needs 1.95; one reason to prefer the release files).</li>
+  <li>It downloaded the 7 Windows x64 portable zips and verified each against <code>SHA256SUMS.txt</code>. All 7 contained the CLI. This answered an open risk from the report: the READMEs did not say that the Windows files include it.</li>
+  <li>It dumped each CLI's command catalogue to <code>tools/cat/</code>. lightcraft answered <code>{"command":"commands","error":"unknown command `commands`","ok":false}</code>; its list command is <code>run engine.commands</code>.</li>
+  <li>It drew a first Lumen logo in vectorcraft. The wordmark overlapped the sun-star. This is when the user gave the "no toy projects" rule. The session ended with a <code>HANDOFF.md</code> and the plan.</li>
+</ol>
+<p>Total output on disk at the end: about 1.55 GB in <code>projects/*/out</code> plus 1.4 GB of app builds in <code>apps/</code>.</p>
+
+<h3>The companion guide — read late, and what it would have changed</h3>
+<p><code>The Craft Apps Automation Guide.pdf</code> is a 12-page RoboNuggets guide to the same video, "Checked 8 October 2026". Its file time (2026-10-08 06:31 local) is two minutes before session 1 began, so it was in the workspace from the start. Neither session read it until the user added it as a source at the end of session 2. A second root file, <code>README.txt</code>, is excluded from this project by the user's decision. The guide gives one install prompt, the three ways an agent can drive the apps, one tested job per app with a copy-paste prompt, and a list of quirks. Compared with this build:</p>
+<div class="tablewrap"><table>
+<tr><th>Topic</th><th>The guide says</th><th>This build</th></tr>
+<tr><td>How to drive the apps</td><td>"drive the apps through their command line, not their MCP servers, unless i ask. it keeps your memory free for the actual work." MCP tool lists load every session (LightCraft has about 100 tools).</td><td>MCP for 6 of 7 crafts, through <code>tools/mcpclient.py</code>, called from scripts. The tool lists did not load into the agent's context, because the scripts, not the agent, held the MCP sessions. The context still reached about 489k tokens at the handoff; this page does not measure which content filled it.</td></tr>
+<tr><td>Versions</td><td>On 8 Oct: PhotoCraft 0.3.0, FilmCraft 0.2.1, EffectCraft 0.4.0, VectorCraft 0.4.0, LightCraft 0.2.1, PrintCraft 0.2.1, DesignCraft 0.2.1.</td><td>Newer builds: 0.5.0, 0.4.0, 0.6.0, 0.7.0, 0.4.0, 0.4.0, 0.4.0. Some quirks in the guide may be fixed in these.</td></tr>
+<tr><td>Acrobat clone name</td><td>Released as "PrintCraft" (<code>printcraft-cli</code>); the repo and newer builds say pdfcraft.</td><td>Used <code>pdfcraft-cli</code> 0.4.0.</td></tr>
+<tr><td>Smart objects in PSD</td><td>"PNG export flattens, and PSD can't hold smart objects. Keep the .pcraft as your master."</td><td>The hero is saved as both <code>.pcraft</code> and <code>.psd</code>. The PSD was checked only for its layer tree, not for live smart objects. Treat the <code>.pcraft</code> as the master.</td></tr>
+<tr><td>VectorCraft stroke</td><td>"A stroke setting sticks to new shapes."</td><td>Hit the same issue: objects inherited a stroke; fixed by setting the default stroke to none.</td></tr>
+<tr><td>EffectCraft fonts</td><td>"avoid variable fonts in bold"; "fontFamily is ignored. Use font and fontStyle".</td><td>Hit the same issue: Bahnschrift (a variable font) gave only Regular; Bold was faked with a stroke.</td></tr>
+<tr><td>Lottie warnings</td><td>"Lottie export tells you what it dropped."</td><td>Export reported 0 warnings, and lottie-web 5.12.2 still ignored Merge Paths, so the holes filled in until the web comp used even-odd fills.</td></tr>
+<tr><td>DesignCraft fonts</td><td>"DesignCraft can't use my installed fonts yet"; no command to link text frames.</td><td>The 0.4.0 build set Bahnschrift and Georgia in its paragraph styles. Whether the page renders use those fonts or a fallback was not checked.</td></tr>
+<tr><td>Check your own work</td><td>"render a preview, look at it, fix what's off".</td><td>The same loop, on every craft; 2–3 rounds on most.</td></tr>
+</table></div>
+<div class="card rule">Rule learned: read the source documents in the workspace before the first build step. This guide named two of the problems the build later hit (the sticky stroke and bold variable fonts), and it marks the PSD as a weak master.</div>
+
+<h3>The architecture that every craft shares</h3>
+<p>Early in the build (03:14) the agent wrote one small file, <code>tools/mcpclient.py</code>: a minimal MCP client that starts <code>&lt;craft&gt;-cli.exe mcp</code> and talks to it over standard input and output. Every Python build script uses it. The shape is the same for six crafts:</p>
+<pre>build_&lt;thing&gt;.py  →  tools/mcpclient.py  →  &lt;craft&gt;-cli.exe mcp  →  craft engine  →  &lt;craft&gt;/out/…</pre>
+<p>effectcraft is the exception. Its build is a JSX script (the scripting language After Effects uses), run with <code>"$fx" --empty --save-as out/lumen-motion.ecproj script build_motion.jsx</code>. A few steps used plain CLI commands in bash. The file <code>projects/env.sh</code> holds the 7 CLI paths as <code>$vec $photo $light $fx $film $dsg $pdf</code>.</p>
+<div class="card rule">Rule learned: write the MCP client before the first app. One 76-line client (<code>tools/mcpclient.py</code>) drove 6 of the 7 crafts; effectcraft used its own JSX scripting.</div>
+
+<h2 id="crafts">3. The build, craft by craft</h2>
+<p>The build ran in chain order, because each craft uses files from the crafts before it: vectorcraft → photocraft → lightcraft → effectcraft → filmcraft → designcraft → pdfcraft. Each subsection gives what the script builds, the design decisions, the features that a reader new to these tools should notice, and what went wrong.</p>
+
+<h3>3.1 vectorcraft — the brand identity <span class="tag">build_identity.py · 03:14–03:18</span></h3>
+<div class="gallery">
+  <figure><img src="journey-img/vec-label.png" alt="Ember Ridge bag label with logo, origin, tasting notes, roast dots"><figcaption>Bag label, 100 × 140 mm. The thin magenta edge is the die-cut line.</figcaption></figure>
+  <figure><img src="journey-img/vec-palette.png" alt="Five brand colour swatches"><figcaption>Colour palette artboard</figcaption></figure>
+  <figure><img src="journey-img/vec-card.png" alt="Business card front"><figcaption>Business card, 3.5 × 2 in</figcaption></figure>
+</div>
+<h4>What it builds</h4>
+<ul>
+  <li>One CMYK document with 12 artboards (separate "pages" on one canvas) and a 3 mm bleed.</li>
+  <li>The mark: a 16-point star with a circle cut out (the sun ring) and an ellipse with an S-curve cut out (the bean), made with pathfinder operations.</li>
+  <li>Stacked and horizontal logo lockups, one-colour black, reversed, a clear-space diagram, the bag label, business card front and back, and a palette sheet.</li>
+  <li>Exports: <code>.vectorcraft</code>, <code>.ai</code>, a presentation PDF, a PDF/X-4 print file, 6 EPS files, SVG and PNG at 1x and 2x, and app icons at 1024, 512, 192, 180, 32 and 16 px.</li>
+</ul>
+<h4>Design decisions</h4>
+<ul>
+  <li>Five named colours, each with CMYK for print and hex for screen: Lumen Roast <code>#1d1410</code>, Lumen Ember <code>#f2843a</code> (a spot ink), Lumen Gold <code>#f9bb2b</code>, Lumen Crema <code>#fdf2e0</code>, Lumen Clay <code>#b06a45</code> (<code>build_identity.py:22-29</code>).</li>
+  <li>Type: Bahnschrift (a clean, slightly condensed sans-serif) for the wordmark and labels; Georgia italic for descriptive lines.</li>
+  <li>Clear space X = half the sun radius. Minimum logo size 25 mm in print and 120 px on screen. Label safe area 5 mm, die-cut corner radius 5 mm.</li>
+  <li>Text converted to outlines, so the logo does not need the font installed.</li>
+</ul>
+<h4>Features to notice</h4>
+<ul>
+  <li><strong>Spot colour:</strong> "Lumen Ember" is printed with its own premixed ink, not mixed from the four process inks, so the orange is the same on every print run.</li>
+  <li><strong>Dieline on an overprinting layer:</strong> the cutting line for the label shape is a separate ink ("Dieline", 0/100/0/0) that prints on top without knocking out the art below it. The printer uses it to make the cutting tool; it is never printed on the real label.</li>
+  <li><strong>PDF/X-4:</strong> an ISO standard PDF for print shops, here with trim marks, registration marks, colour bars and page information.</li>
+  <li><strong>Global swatches:</strong> change one swatch and every object that uses it changes.</li>
+  <li><strong>Multi-artboard export:</strong> one command writes every artboard as its own SVG and PNG.</li>
+</ul>
+<h4>What went wrong</h4>
+<ul>
+  <li>The first logo had the wordmark overlapping the star (session 1, phase B).</li>
+  <li><code>document.exportEps</code> failed because the <code>eps/</code> folder did not exist. Fix: create it first.</li>
+  <li>Objects were drawn with a default stroke. Fix: set the default stroke to none and rebuild.</li>
+</ul>
+
+<h3>3.2 photocraft — a product photo with no camera <span class="tag">build_hero.py · 03:18–03:27</span></h3>
+<div class="gallery">
+  <figure><img src="journey-img/photo-hero.jpg" alt="Product hero image"><figcaption>Hero master, 3000 × 2000, 16-bit, 67 layers</figcaption></figure>
+  <figure><img src="journey-img/photo-story.jpg" alt="Vertical social post with Ember Ridge type"><figcaption>9:16 story post with type layers</figcaption></figure>
+</div>
+<h4>What it builds</h4>
+<ul>
+  <li>It asks vectorcraft to render the label artboard with the dieline hidden, as <code>label-1400w.png</code>.</li>
+  <li>A 3000 × 2000, 16-bit RGB document: a gradient backdrop with a blurred glow, a tabletop with noise plus motion blur for wood grain, contact shadows.</li>
+  <li>The bag: gradient body, a seal band with 7 crimp lines, side gussets, a degassing valve. The label sits on it, clipped to a die-cut rounded rectangle, shaded with a reflected gradient so it looks curved.</li>
+  <li>36 coffee beans in 3 clusters (14 + 16 + 6, random seed 42), each one a transformed copy of one master bean. Nearer beans are larger: scale = <code>0.8 + (ty-1600)/900*0.5</code>.</li>
+  <li>Finishing layers: Curves, Colour Balance, Vibrance, film grain. Saved as <code>.pcraft</code> and <code>.psd</code>, plus master PNG and TIFF.</li>
+  <li>Four recorded "actions" (<code>actions/*.json</code>) make 1:1, 4:5 and 9:16 crops at 1080 px wide and a 2400 × 1600 web image. <code>make_story_post.sh</code> adds 4 type layers to the 9:16 crop.</li>
+</ul>
+<h4>Features to notice</h4>
+<ul>
+  <li><strong>Layers:</strong> 67 stacked, separately editable pieces. The PSD reopened with its layer tree intact.</li>
+  <li><strong>Smart object:</strong> the label is placed as a container that keeps its original pixels, so it can be scaled or filtered again without loss.</li>
+  <li><strong>Smart filter:</strong> a blur on a smart object stays editable.</li>
+  <li><strong>Layer styles:</strong> inner glow, inner shadow, drop shadow, bevel and emboss, gradient overlay — effects attached to a layer, not painted into it.</li>
+  <li><strong>Clipping and adjustment layers:</strong> a layer shows only inside the layer below it; colour corrections sit on top without changing pixels.</li>
+  <li><strong>Actions:</strong> a recorded list of steps that runs on many files.</li>
+</ul>
+<h4>What went wrong</h4>
+<ul>
+  <li><code>automation command `file.placeEmbedded` uses ambient filesystem paths and is disabled; use capability-scoped document methods</code>. Fix: open the label as its own document, copy, paste into the hero (<code>build_hero.py:115</code>).</li>
+  <li>The label and the valve overlapped on the first render. Fix: move both, rebuild.</li>
+  <li>Story-post type styles used wrong character keys on the first try. Fix: read the type-style keys, rebuild.</li>
+  <li>No script runs the 4 action files. They were run by hand in the session. A rebuild from scripts alone does not make the social crops.</li>
+</ul>
+
+<h3>3.3 lightcraft — grading a "shoot" <span class="tag">make_shoot.sh, build_series.py · 03:27–03:31</span></h3>
+<div class="gallery">
+  <figure><img src="journey-img/light-wide.jpg" alt="Graded wide frame"><figcaption>LUM_0001 wide, "Lumen Warm Matte" look</figcaption></figure>
+  <figure><img src="journey-img/light-label.jpg" alt="Graded label detail frame, 4:5 crop"><figcaption>LUM_0002 label detail, 4:5 crop</figcaption></figure>
+</div>
+<h4>What it builds</h4>
+<ul>
+  <li><code>make_shoot.sh</code> uses photocraft to cut 4 "frames" from the hero master: wide, label detail, beans right, beans left. They are renders, not camera RAW files.</li>
+  <li><code>build_series.py</code> imports them into a lightcraft library, develops the wide frame, saves the look as preset "Lumen Warm Matte" and syncs it to all 4.</li>
+  <li>Per-frame changes: a 4:5 crop on the label frame; extra clarity and texture on the bean frames.</li>
+  <li>Library work: ratings 5/4/3/3, title, caption, alt text, copyright, creator, location, keywords; the hero is marked as a pick; album "Ember Ridge launch — selects".</li>
+  <li>Exports: 16-bit TIFFs in sRGB at 2048 px, sRGB full size, Display P3 at 300 ppi and Adobe RGB at 300 ppi.</li>
+</ul>
+<h4>Design decisions</h4>
+<p>The look (<code>build_series.py:19-32</code>): white balance 6900 K, tint +4; highlights −18; shadows +10; blacks +8; colour grading 30°/10 and 45°/8; vignette −14; grain 12. The first version was too strong; the agent softened it and fixed a label crop and two bean crops after it looked at the exports.</p>
+<h4>Features to notice</h4>
+<ul>
+  <li><strong>Non-destructive develop:</strong> edits are stored as settings, the source file is never changed.</li>
+  <li><strong>Preset and sync:</strong> one look applied to a whole shoot, which is how a series stays consistent.</li>
+  <li><strong>Colour-managed export:</strong> the same image delivered in 3 colour spaces — sRGB for the web, Display P3 for modern screens, Adobe RGB for print.</li>
+</ul>
+<h4>What went wrong — the largest app failure of the project</h4>
+<div class="card wart">
+<p style="margin-top:0">The first export killed the MCP server: <code>RuntimeError: server closed during tools/call</code>, then <code>OSError: [Errno 22] Invalid argument</code>. Run directly from the CLI, the cause appeared:</p>
+<pre>Illegal instruction        "$light" run --library library app.export … format=jpeg longEdge=2048 quality=86
+exit=132</pre>
+<p>A test matrix showed that every 8-bit encode crashes — JPEG, PNG, WebP, AVIF and 8-bit TIFF — while 16-bit TIFF works (<code>sRGB/8 exit=132</code>, <code>sRGB/16 exit=0</code>). "Illegal instruction" means the program used a CPU instruction this processor does not have; the deliverables record notes the i5-12450H has no AVX-512. DNG export refused with <code>DNG export needs a raw photo</code>.</p>
+<p style="margin-bottom:0"><strong>Fix:</strong> lightcraft delivers 16-bit TIFF masters only, and photocraft converts them to the web JPEGs. Exports run as separate <code>lightcraft-cli run --library …</code> processes, because a crash inside the MCP server ends the whole session with it. This JPEG step has no script; it was a one-off loop.</p>
+</div>
+<div class="card rule">Rule learned: when an MCP server closes with a protocol error, run the same command from the plain CLI. Here the MCP error said only <code>server closed during tools/call</code>; the CLI showed exit code 132.</div>
+
+<h3>3.4 effectcraft — the motion package <span class="tag">build_motion.jsx · 03:31–03:36</span></h3>
+<div class="gallery">
+  <figure><img src="journey-img/fx-sting.jpg" alt="Logo sting frame with lens flare"><figcaption>Logo sting at 2.6 s, with Lens Flare</figcaption></figure>
+  <figure><img src="journey-img/fx-title.jpg" alt="Ember Ridge title card"><figcaption>Title card</figcaption></figure>
+  <figure><img src="journey-img/fx-lowerthird.jpg" alt="Lower third: Mara Okafor, Head Roaster"><figcaption>Lower third (rendered with a transparent background)</figcaption></figure>
+</div>
+<h4>What it builds</h4>
+<p>Seven compositions ("comps"), all 1920 × 1080 at 30 fps: Logo Sting (5 s), Title Card (4 s), two lower thirds (6 s each, transparent), End Card (4 s), Logo Sting Web (4 s), and Music Bed (30 s). Renders: the sting as H.264 and as ProRes 4444 with alpha; title and end cards; lower thirds as ProRes 4444 with alpha; the web sting as a transparent WebM and as a Lottie JSON file with 0 export warnings. The render and Lottie commands are not in the script; <code>DELIVERABLES.md</code> records them.</p>
+<h4>Design decisions</h4>
+<ul>
+  <li>The logo is redrawn natively as shape layers, from the same 16 points and ratios as vectorcraft. The subagent checked the curves: they match.</li>
+  <li>The wordmark letter-spacing animates from 700 to 0, so the letters close in. Easing uses keyframe influence of 50–85 %.</li>
+  <li>Lower-third bar 820 × 150 at 92 % opacity, with a 12 px Ember accent bar.</li>
+  <li>A 30 s music bed of sine-wave chords (section 7 explains why this failed).</li>
+</ul>
+<h4>Features to notice</h4>
+<ul>
+  <li><strong>Shape layers with Merge Paths:</strong> vector shapes that can be animated point by point.</li>
+  <li><strong>Text animators:</strong> spacing and position change per letter.</li>
+  <li><strong>Lens Flare:</strong> a simulated light flare sweeps across the logo.</li>
+  <li><strong>ProRes 4444 with alpha:</strong> a professional video format that stores transparency, so the lower thirds can sit over other footage in the editor.</li>
+  <li><strong>Lottie:</strong> a small JSON file that a web page plays as live vectors — sharp at any size, much smaller than a video.</li>
+</ul>
+<h4>What went wrong</h4>
+<ul>
+  <li><code>effectcraft-cli script: build_motion.jsx:6:44: TypeError: not a callable function</code> — the JSX engine has no <code>String.substr</code>; the hex-colour parser used it. Fix: rewrite the parser. Because the script failed, every <code>render-frame</code> then reported <code>no composition "Logo Sting"</code>.</li>
+  <li>Bahnschrift is one variable font, and effectcraft exposes only "Regular". <code>Can not add "ADBE Text Font Axis" to an animator's Properties</code>. Fix: fake Bold with a same-colour stroke at 2.4 % of the type size.</li>
+  <li>The first sting had a glow and a strong flare; the agent removed the glow and softened the flare after review frames.</li>
+  <li><code>cannot write renders/lumen-logo-sting-web.lottie.json: The system cannot find the path specified. (os error 3)</code> — <code>exec</code> paths resolve from the working folder, <code>render</code> paths from the project folder. Fix: absolute path.</li>
+  <li>lottie-web (the standard web player) ignores Merge Paths, so the holes in the sun and bean filled in. Fix: a separate web comp with even-odd fills; checked in Chrome on a checkerboard.</li>
+</ul>
+
+<h3>3.5 filmcraft — the edit <span class="tag">build_spot.py · 03:36–03:48</span></h3>
+<div class="gallery">
+  <figure><img src="journey-img/film-12.jpg" alt="Spot frame at 12 seconds with lower third"><figcaption>:30 at 12 s — wide shot with "Ember Ridge, Lot 07" lower third</figcaption></figure>
+  <figure><img src="journey-img/film-916.jpg" alt="Vertical 9:16 frame"><figcaption>9:16 :15 cutdown at 8 s</figcaption></figure>
+</div>
+<h4>What it builds</h4>
+<ul>
+  <li>The :30 sequence, 1920 × 1080, 30 fps: sting 0–5 s, title 5–9, wide 9–15, label over a Roast-colour matte 15–19, bean close-up 19–23, second bean close-up 23–26, end card 26–30. The bean shots are slow push-ins on the 3000 px lightcraft master at 100 %, so nothing is upscaled.</li>
+  <li>Lower thirds at 9.5 s and 18.6 s, 12-frame cross dissolves, music at −6 dB, 7 English captions.</li>
+  <li>Exports: H.264 (16 Mb/s, 2-pass, −16 LUFS) with an SRT caption file; ProRes 422 HQ master; EDL, FCP7 XML, FCPXML and OTIO interchange files.</li>
+  <li>A vertical 1080 × 1920 :15 from the story post, label and end card, H.264 at 12 Mb/s, −14 LUFS.</li>
+</ul>
+<h4>Features to notice</h4>
+<ul>
+  <li><strong>Keyframed motion:</strong> slow zooms and pans on still images (the "Ken Burns" move).</li>
+  <li><strong>Caption track and SRT sidecar:</strong> subtitles as a separate file that platforms read.</li>
+  <li><strong>Loudness normalisation (LUFS):</strong> the standard measure that makes a video as loud as its neighbours on a platform; −16 and −14 LUFS are common web targets.</li>
+  <li><strong>Interchange files:</strong> EDL, XML, FCPXML and OTIO let other editing apps rebuild the same timeline.</li>
+</ul>
+<h4>What went wrong</h4>
+<ul>
+  <li><code>RuntimeError: tools/call: {'code': -32602, 'message': 'unknown argument "paths" for media_import; expected: text'}</code>. Fix: use the command <code>file.import {paths}</code>.</li>
+  <li><code>timeline.place {"item": null, …}</code> — invalid parameters. The item lookup by file name returned nothing. Fix: inspect the project tree, walk it by name.</li>
+  <li>The bean shots were first soft. Fix: export full-size 16-bit sRGB masters from lightcraft (3000 × 2000) and crop at 100 %.</li>
+  <li>MP4 files are written with the index (<code>moov</code>) after the media data (<code>mdat</code>), so a browser cannot start playback until it can request byte ranges. No option was found to change this. Fix for local QC: <code>tools/rangeserve.py</code>, a static server with HTTP Range support.</li>
+  <li>The interchange files lose detail (from the build log): the EDL "holds one video track", colour mattes are exported "as black (BL)", and FCPXML writes the colour matte as a gap.</li>
+</ul>
+
+<h3>3.6 designcraft — the brand guidelines <span class="tag">build_guidelines.py · 03:48–03:52</span></h3>
+<div class="gallery">
+  <figure><img src="journey-img/dsg-p01.jpg" alt="Guidelines cover"><figcaption>Cover, A4 landscape</figcaption></figure>
+  <figure><img src="journey-img/dsg-p03.jpg" alt="Guidelines story page"><figcaption>Page 3, "Light, roasted with care"</figcaption></figure>
+</div>
+<h4>What it builds</h4>
+<ul>
+  <li>12 A4 landscape pages (842 × 595 pt): 48 pt margins, a 12-column grid, 8.5 pt bleed.</li>
+  <li>Cover, contents, story, logo, variations, clear space, colour, type, photography, packaging, motion, back cover. Vector logos are placed as pages of the vectorcraft PDF, so they stay sharp.</li>
+  <li>12 paragraph styles; a contents list generated from the H1 style, with page numbers.</li>
+  <li>Preflight at a minimum of 150 ppi; exports a tagged PDF with bookmarks, a PDF/X-4 with bleed and marks, IDML, and a PNG per page.</li>
+</ul>
+<h4>Design decisions</h4>
+<p>Body text Georgia 10/15 pt. A colour-proportion bar shows how much of each colour to use: Roast 55 %, Crema 25 %, Clay 8 %, Ember 8 %, Gold 4 %.</p>
+<h4>Features to notice</h4>
+<ul>
+  <li><strong>Paragraph styles:</strong> named text formats; change the style and every paragraph using it changes.</li>
+  <li><strong>Generated table of contents:</strong> built from the headings, with live page numbers.</li>
+  <li><strong>Preflight:</strong> an automatic check for print problems such as low-resolution images.</li>
+  <li><strong>Tagged PDF:</strong> the PDF carries reading order and structure for screen readers.</li>
+  <li><strong>IDML:</strong> the open interchange format that InDesign reads.</li>
+</ul>
+<h4>What went wrong</h4>
+<ul>
+  <li>Parent pages (templates shared by many pages) could not be addressed headless: <code>export_png: no page 2</code> during the probe. Fix: place the footer on each page with a <code>footer()</code> function.</li>
+  <li><code>toc.generate</code> needs a <code>page</code> argument.</li>
+  <li>The first build lacked a transparent reversed lockup and the contents list was wrong. Fix: add the lockup in vectorcraft, fix the contents, rebuild both.</li>
+  <li>Preflight reported 0 errors and 0 warnings, but the PDF/X-4 export itself logged 11 warnings: 10 RGB images need an ICC profile under the CMYK output intent, and 1 placed PDF is version 1.7 inside a 1.6 file. <code>DELIVERABLES.md</code> reports only the preflight result.</li>
+</ul>
+
+<h3>3.7 pdfcraft — the press kit <span class="tag">build_presskit.py · 03:51–03:54</span></h3>
+<div class="gallery">
+  <figure><img src="journey-img/pdf-p01.jpg" alt="Press release page"><figcaption>Press kit page "PR", authored in pdfcraft</figcaption></figure>
+</div>
+<h4>What it builds</h4>
+<ul>
+  <li>Combines the 12 guideline pages with 6 identity pages, and adds an authored press-release page (text, hero image, label image, fact box): 19 pages.</li>
+  <li>A bookmark tree; page labels "PR", 1–12 and "A-1…"; a footer on the appendix; a live URL link; 4 metadata fields.</li>
+  <li>An accessibility check, automatic fixes for <code>title</code> and <code>primary-language</code> (en-US), and a second check.</li>
+  <li>A 2-page product sheet (pages extracted), 3 section PDFs (split by bookmark), and a protected distribution copy: printing allowed, changes and copying not allowed.</li>
+</ul>
+<h4>Features to notice</h4>
+<ul>
+  <li><strong>Page labels:</strong> the viewer shows "PR" or "A-1" in place of raw page numbers.</li>
+  <li><strong>Split by bookmark:</strong> one command makes one PDF per chapter.</li>
+  <li><strong>Accessibility check and fix:</strong> failed rules went from 6 to 4.</li>
+  <li><strong>Encryption:</strong> the distribution copy uses AES-256 (the file shows <code>/V 5 /R 6 /CFM /AESV3</code>).</li>
+</ul>
+<h4>What went wrong</h4>
+<ul>
+  <li><code>page_number {"doc": 1, "from": 14, "to": [{"height": 595.0, …</code> — the script passed the page list where a number was expected, because <code>doc_info.pages</code> is a list, not a count.</li>
+  <li>The kicker line on the press page wrapped badly: <code>page_add_text</code> wraps narrow. It took 3 rebuilds: an explicit width, then splitting it into two text items.</li>
+  <li>4 accessibility rules still fail on the combined kit (tagged-pdf, tagged-content, tagged-annotations, tab-order): combining dropped designcraft's tags.</li>
+  <li>The product sheet is 34 MB for 2 pages, because extraction kept the full-size images.</li>
+  <li>The permissions password for the distribution copy is a plain literal in <code>build_presskit.py:103</code>. It is not printed here.</li>
+</ul>
+
+<h2 id="consistency">4. The crux: one style and one message across 7 apps</h2>
+<p>The user's question was: how can style and message stay consistent across all the crafts? This build gives an honest answer in two parts — what was done, and what leaked.</p>
+
+<h3>4.1 What this build did</h3>
+<p><strong>Files carried the look.</strong> Where one craft used another craft's output file, consistency was automatic, because it was literally the same artwork:</p>
+<ul>
+  <li>vectorcraft's label artboard → photocraft's hero bag (rendered to <code>label-1400w.png</code>, pasted as a smart object).</li>
+  <li>photocraft's hero master → lightcraft's 4 frames → filmcraft's wide and bean shots, designcraft's photography page, pdfcraft's press page.</li>
+  <li>effectcraft's renders → filmcraft's timeline; effectcraft's review frames → designcraft's motion page.</li>
+  <li>vectorcraft's presentation PDF → designcraft's logo pages and pdfcraft's appendix; designcraft's guidelines PDF → pdfcraft's press kit.</li>
+</ul>
+<p><strong>Copy-paste carried everything else.</strong> No shared brand file exists. Each of the 7 build scripts types the colours, fonts, product facts and copy lines again. The research subagent found the five colour hexes re-declared in designcraft, effectcraft, pdfcraft, filmcraft and the story-post script, and the product facts (Ethiopia, Guji, Washed, 2,100 m; Lot 07; Mara Okafor; 340 g / 12 oz) in five or six scripts each. vectorcraft → effectcraft has no file handoff at all: effectcraft redraws the logo from copied numbers. It matches, but only because the numbers were copied correctly.</p>
+
+<h3>4.2 What leaked — 13 inconsistencies</h3>
+<p>The subagent's audit found these. None was fixed in this pass; this page documents them.</p>
+<ol>
+  <li><strong>Tasting notes, 4 forms:</strong> "Bergamot, ripe apricot, cacao nib" (label, video caption, guidelines); "Bergamot · Apricot · Cacao nib" (story post, title card); the guidelines and press release add "bright, tea-like … long cocoa finish".</li>
+  <li><strong>Origin line, 5 forms:</strong> "Ethiopia · Guji · Washed · 2,100 m"; "ETHIOPIA · GUJI · WASHED · 2,100 M" (the metre becomes a capital M); "Guji zone, Ethiopia"; "2,100 metres" and "2,100 m" in the same press kit.</li>
+  <li><strong>Fonts:</strong> the press-release page uses Helvetica and Times, not Bahnschrift and Georgia. The tagline is SemiLight in vectorcraft and Regular in effectcraft.</li>
+  <li><strong>Off-palette colour:</strong> the story post's tasting notes use <code>#6b3f24</code>, which is not Clay (<code>#b06a45</code>).</li>
+  <li><strong>Bleed:</strong> 8.504 pt in vectorcraft, 8.5 pt in designcraft; both labelled 3 mm.</li>
+  <li><strong>Letter-spacing:</strong> the guidelines say capitals use 300 tracking; the label uses 380 and the kickers 420.</li>
+  <li><strong>Logo misuse rules:</strong> vectorcraft lists 4; designcraft adds "rotate" and "shadows".</li>
+  <li><strong>URL and email forms:</strong> capitals on the story post, "https://" only in pdfcraft; email mara@ on the card and press release, hello@ on the back cover.</li>
+  <li><strong>Records:</strong> <code>DELIVERABLES.md</code> says 14 paragraph styles; the code makes 12.</li>
+  <li><strong>Records:</strong> "preflight 0 errors / 0 warnings" is true, but the PDF/X-4 export logged 11 warnings.</li>
+  <li><strong>Records:</strong> <code>DELIVERABLES.md</code> says "all → designcraft → pdfcraft"; filmcraft is an end point and feeds neither.</li>
+  <li><strong>Records:</strong> the <code>build_motion.jsx</code> header lists 5 comps; the code makes 7.</li>
+  <li><strong>Possible:</strong> the guidelines say keep type 250 px clear of the bottom of a story; the story URL is placed at y = 1702 of 1920 (218 px). Not confirmed, because the anchor point of that y value is unknown.</li>
+</ol>
+<div class="card rule">Rule learned: in this build, artwork passed between crafts as a file matched in every craft that used it. Facts and copy retyped in up to 6 scripts produced the 13 differences in section 4.2.</div>
+
+<h3>4.3 Advice for the next build <span class="tag">recommendation, not done here</span></h3>
+<ol>
+  <li><strong>One brand file, read by every script.</strong> Put the colours (hex and CMYK), fonts with weights, tracking values, bleed, and every approved copy line (tasting notes, origin line, URL, contacts) in one <code>brand.json</code>. Each build script loads it and contains no brand literals.</li>
+  <li><strong>Pass artwork as files, never as numbers.</strong> effectcraft should import the vectorcraft SVG of the mark, not redraw it from copied coordinates.</li>
+  <li><strong>Write the message once.</strong> Approve a short "message house" — headline, 3 proof points, one call to action — and generate captions, story text, press copy and guideline text from it.</li>
+  <li><strong>One check after each build.</strong> A small script that searches every build script and text export for any hex code or copy line that is not in <code>brand.json</code>. It would have caught items 1, 2, 4 and 8.</li>
+  <li><strong>Build the guidelines from the brand file.</strong> designcraft's tracking, safe-zone and misuse rules should come from the same file the other crafts read, so the book cannot disagree with the work.</li>
+</ol>
+
+<h2 id="tools">5. Tools and features used</h2>
+<div class="tablewrap"><table>
+<tr><th>Tool</th><th>What it did in this project</th></tr>
+<tr><td>Bash (Git Bash)</td><td>Session 1: 122 calls — downloads, checksums, CLI runs, test matrices, <code>ffprobe</code> checks.</td></tr>
+<tr><td>Read / Edit / Write</td><td>53 / 26 / 18 calls in session 1: build scripts, <code>DELIVERABLES.md</code>, <code>HANDOFF.md</code>, memory files.</td></tr>
+<tr><td>WebFetch, WebSearch</td><td>17 and 1 calls: GitHub org pages, READMEs, the Codex MCP documentation.</td></tr>
+<tr><td>AskUserQuestion</td><td>Session 1: one form with 4 questions before the build. Session 2: two forms (next task; format and scope of this page).</td></tr>
+<tr><td>Claude in Chrome</td><td>Session 1: QC of SVGs, the Lottie file and the press-kit PDF in the browser (7 computer, 6 javascript, 5 navigate calls).</td></tr>
+<tr><td><code>tools/mcpclient.py</code></td><td>The minimal MCP stdio client every Python build script uses.</td></tr>
+<tr><td><code>tools/rangeserve.py</code></td><td>Static web server with HTTP Range support, for MP4 playback in the browser.</td></tr>
+<tr><td><code>gh</code> CLI</td><td>Created and pushed <code>az9713/artcraft-tutorial</code>; enabled GitHub Pages.</td></tr>
+<tr><td>ffmpeg / ffprobe</td><td>Session 2: loudness (EBU R128) and per-second level of the jingle takes and the new exports; thumbnails for this page.</td></tr>
+<tr><td>ElevenLabs connector</td><td>Session 2: Music v2.5, three 30 s jingle takes.</td></tr>
+<tr><td>Skills</td><td><code>handoff-after-clear</code> (end of session 1); <code>music</code> (session 2, for the ElevenLabs API); <code>dev-journey</code> (this page).</td></tr>
+<tr><td>Subagents and advisor</td><td>Session 1: none — all work inline. Session 2: one general-purpose subagent (the design-decision and consistency audit in sections 3 and 4) and one advisor consultation before this page was written.</td></tr>
+</table></div>
+<p><strong>Invisible constraints that shaped the output.</strong> The user's global rules were active in both sessions: replies in ASD-STE100 Simplified Technical English; precise, not rhetorical phrasing; dark-mode HTML. A "ponytail" hook pushed toward the smallest working change. A "coach" hook warned about context size (section 9).</p>
+
+<h2 id="wrong">6. What went wrong, and the fixes</h2>
+<p>The app-specific failures are in each craft's subsection. These are the harness and process failures — problems of Claude Code, the shell, or the agent, not of the crafts.</p>
+<ol>
+  <li><code>UnicodeEncodeError: 'charmap' codec can't encode character '\u2192' in position 22</code> — Windows Python printed to a cp1252 console; the catalogues contain "→". Failed twice before the fix: run Python with <code>-X utf8</code>.</li>
+  <li><code>make.sh: line 2: : command not found</code> (exit 127) — the corrected logo script used <code>$vec</code>, which was set but not exported to the child shell. Fix: <code>export</code> the variables after <code>. projects/env.sh</code>.</li>
+  <li><code>ModuleNotFoundError: No module named 'mcpclient'</code> — an inline probe could not import the new client. Fix: each build script inserts <code>tools/</code> into <code>sys.path</code> itself (for example <code>build_spot.py:10</code>).</li>
+  <li><code>File has not been read yet. Read it first before writing to it.</code> — the agent tried to overwrite <code>MEMORY.md</code> without reading it.</li>
+  <li><code>CDP sendCommand "Page.captureScreenshot" timed out after 30000ms</code> — Chrome ran with its window hidden (<code>visibilityState: hidden</code>). It did not load <code>&lt;video&gt;</code> elements. Video was checked by decoding frames in effectcraft instead.</li>
+  <li><code>ConnectionResetError: [WinError 10054]</code> from Python's simple web server when Chrome asked for byte ranges; this led to <code>rangeserve.py</code>.</li>
+  <li><strong>Lost checkout.</strong> The git copy of <code>artcraft-tutorial</code> lived in the session scratchpad, which is deleted at <code>/clear</code>. <code>HANDOFF.md</code> says to clone it again before editing the page.</li>
+  <li><strong>Near-miss:</strong> the first lightcraft failure looked like an MCP protocol bug (<code>OSError: [Errno 22] Invalid argument</code>). It was an app crash, which the plain CLI run showed as exit code 132.</li>
+</ol>
+
+<h2 id="music">7. Session 2: the music that failed</h2>
+<p>After <code>/clear</code>, session 2 resumed from <code>HANDOFF.md</code>. Asked which task to do, the user wrote:</p>
+<blockquote>The sound effect is bad. it is a monotone noise. remove it or come up with better. can music be created like a short jingo</blockquote>
+<h3>Why the first score failed — an agent design error</h3>
+<p>The "music" was a 30 s bed that the session 1 agent specified in <code>build_motion.jsx:192-208</code> and effectcraft rendered with its Tone effect: four sustained 5-note sine-wave chords, Dmaj9 – Bm11 – Gmaj9 – A6/9, 7.5 s each, with 0.75 s crossfades. effectcraft rendered these settings as specified, so the faults below are in the specification:</p>
+<ul>
+  <li>Sine waves have no overtones; they sound like test tones.</li>
+  <li>No melody, no rhythm, no attack: the sound changes 4 times in 30 s.</li>
+  <li>Every chord contains two notes a whole tone apart, which beat at 40.36, 35.97, 26.94 and 30.24 Hz. In that range the ear hears a rough buzz. (Calculated from the script's frequencies, not measured in the WAV.)</li>
+  <li>The chords change at 7.5, 15 and 22.5 s; the picture cuts at 5, 9, 15, 19, 23 and 26 s. 1 of the 3 chord changes (15 s) falls on a cut. The logo appears during a 2.0 s fade-in, and the end card has a 3 s fade-out with no final chord.</li>
+</ul>
+<p>Session 1 had checked this file only by level ("WAV RMS ≈ -17 dBFS"). A level check cannot hear music. A fuller explanation is in <code>projects/filmcraft/temp-score-explained.html</code>.</p>
+<div class="card rule">Rule learned: session 1 checked the score only by level (RMS ≈ −17 dBFS). A level measurement does not test melody, rhythm or fit to the picture, so a person must listen before audio is accepted.</div>
+<h3>The replacement, and a broken promise</h3>
+<ol>
+  <li>The ElevenLabs connector (Music v2.5, flow <code>ckO0MhirZeulZW65EMCF</code>) made 3 takes of a 30 s instrumental jingle: marimba, acoustic guitar, upright bass, light percussion, about 100 BPM, a four-note hook at the start and a resolved final chord. 900 credits each, 2,700 credits ($0.45) in total. Generation took about 2 minutes.</li>
+  <li>The agent cannot hear audio, so it selected by measurement: take B starts with 1.18 s of silence (under the logo); take A lifts at 19 s; take C starts at once, lifts at 9 s on the wide-shot cut, and ends with a decay to −39 dB in the last 0.5 s. Take C was chosen.</li>
+  <li><code>build_spot.py</code> was changed to load <code>filmcraft/music/lumen-jingle-30s.mp3</code>, and the :15 now uses the jingle's last 15 s so it ends with the end card. The rebuild took about 3 minutes.</li>
+  <li>Checks: :30 at −16.0 LUFS (peak −3.2 dBFS), :15 at −14.0 LUFS (peak −2.0 dBFS), ProRes master at −19.2 LUFS (the build sets no target for it). The per-second level of each export follows take C.</li>
+</ol>
+<p><strong>The cost to the original brief:</strong> Brief 2 said "Every artifact will be created by the crafts." The music is now made by an external AI service. <code>DELIVERABLES.md</code> gap 7 and the <code>build_spot.py</code> header say so.</p>
+
+<h2 id="verify">8. Verification</h2>
+<div class="tablewrap"><table>
+<tr><th>Claim</th><th>How it was checked</th><th>When</th></tr>
+<tr><td>Downloads are genuine</td><td>SHA-256 of each zip against <code>SHA256SUMS.txt</code></td><td>S1</td></tr>
+<tr><td>Images and pages look right</td><td>The agent viewed PNG renders after each build and rebuilt after faults (2–3 rounds on most crafts)</td><td>S1, not re-checked</td></tr>
+<tr><td>Print PDFs are valid</td><td>pdfcraft <code>check</code> on the vectorcraft PDF/X-4 (PDF 1.6, 3 pages, 0 warnings) and all press-kit PDFs</td><td>S1</td></tr>
+<tr><td>Guidelines print-ready</td><td>designcraft preflight 0 errors / 0 warnings (but 11 export warnings, see 3.6)</td><td>S1</td></tr>
+<tr><td>Layered PSD survives</td><td>Reopened with <code>info</code>: 16-bit, layer tree intact, 67 layers</td><td>S1</td></tr>
+<tr><td>ProRes has transparency</td><td>filmcraft <code>probe</code>: Apple ProRes 4444, has_alpha, YUVA 4:4:4 12-bit</td><td>S1</td></tr>
+<tr><td>Lottie plays on the web</td><td>lottie-web 5.12.2 in Chrome on a checkerboard; holes transparent</td><td>S1</td></tr>
+<tr><td>Videos are correct</td><td>H.264 probe (High, 1920 × 1080, AAC 48 kHz, 30.0 s); frames decoded in effectcraft and viewed; EDL read</td><td>S1</td></tr>
+<tr><td>New music is in the videos</td><td>EBU R128 loudness and per-second level of each export against take C</td><td>S2</td></tr>
+<tr><td>Demo server works</td><td>HTTP 206 for <code>_qc/index.html</code>, <code>_qc/lottie.html</code> and the :30 MP4</td><td>S2</td></tr>
+<tr><td>Thumbnails on this page</td><td>Made with ffmpeg and pdfcraft <code>render</code> from the current outputs; the bag label was viewed</td><td>S2</td></tr>
+</table></div>
+<p><strong>Not verified:</strong> the jingle by ear (the user has not confirmed take C); video playback in a visible browser (Chrome was hidden in session 1); the <code>.ai</code>, <code>.psd</code> and <code>.idml</code> files in Adobe's own apps; the raw-photo path of lightcraft (the shoot is renders, not RAW); this page in a browser.</p>
+
+<h2 id="costs">9. Costs, limits and agents</h2>
+<ul>
+  <li><strong>Context:</strong> the coach hook reported about 186k tokens at the start of the build and about 489k at the handoff — it called this "god-session territory". Session 2 passed 150k before this page was started.</li>
+  <li><strong>Money:</strong> ElevenLabs 2,700 credits, $0.45. No other paid service was used.</li>
+  <li><strong>Wall clock (from transcript times, UTC):</strong> research report 13:29–15:20 (about 1 h 50 min); install and first logo 21:31–21:35; production build 03:13–04:00 (47 min) for 7 crafts including all rebuilds; handoff 13:33–13:36. The gap 21:35–03:12 is idle time.</li>
+  <li><strong>Disk:</strong> about 1.55 GB of outputs and 1.4 GB of app builds. The ProRes master alone is 567,053,562 bytes.</li>
+  <li><strong>Hardware limit:</strong> the i5-12450H cannot run lightcraft 0.4.0's 8-bit encoders.</li>
+  <li><strong>Agents:</strong> session 1 used no subagents and no advisor. Session 2 used one subagent (about 158k tokens, 25 tool calls, 8.7 minutes) for the build-file audit. The advisor, consulted before writing, did not change the plan; it added the scope note at the top, the request to quote all three briefs, and two redactions: the press-kit password and the access code in the ElevenLabs flow link.</li>
+</ul>
+
+<h2 id="stand">10. Where things stand</h2>
+<h3>Done</h3>
+<ul>
+  <li>All 7 crafts produced production-format deliverables, listed in <code>projects/DELIVERABLES.md</code>.</li>
+  <li>The tutorial page is live at <a href="https://az9713.github.io/artcraft-tutorial/">az9713.github.io/artcraft-tutorial</a>.</li>
+  <li>The spot uses the ElevenLabs jingle (take C).</li>
+</ul>
+<h3>Unfinished, and why</h3>
+<ul>
+  <li><strong>The 10 known gaps</strong> in <code>DELIVERABLES.md</code> stand: lightcraft 8-bit crash, untested RAW path, photocraft <code>placeEmbedded</code>, Bahnschrift weights, Lottie Merge Paths, MP4 fast start, music (now external), designcraft parent pages, pdfcraft accessibility and 34 MB product sheet, hidden Chrome.</li>
+  <li><strong>Not fully scripted:</strong> the photocraft action batches, the story-post input, the TIFF → JPEG conversion, and the effectcraft render and Lottie commands were run by hand. A rebuild from the scripts alone is incomplete until these are scripted.</li>
+  <li><strong>The 13 consistency drifts</strong> in section 4.2 are documented, not fixed.</li>
+  <li><strong>The demo page</strong> <code>projects/_qc/index.html</code> shows 4 of 7 crafts; photocraft, lightcraft and designcraft are missing.</li>
+  <li><strong>Old music</strong> (<code>lumen-temp-score-30s.wav</code> and the "Music Bed 30s" comp) is still in the effectcraft project, unused.</li>
+</ul>
+<h3>Knowledge captured</h3>
+<ul>
+  <li><code>HANDOFF.md</code> — resume point, rebuild order, CLI facts that cost time.</li>
+  <li><code>projects/DELIVERABLES.md</code> — file index, verification, the 10 gaps.</li>
+  <li>Memory: <code>amiqa-ask-questions.md</code>, <code>production-grade-no-toys.md</code>.</li>
+  <li><code>projects/filmcraft/temp-score-explained.html</code> — the music post-mortem.</li>
+  <li>This page and <code>journey-img/</code> (17 thumbnails, 556 KB).</li>
+</ul>
+<h3>Next steps (options)</h3>
+<ol>
+  <li>Listen to take C and keep it or change it.</li>
+  <li>Make <code>brand.json</code> and fix the 13 drifts (section 4.3).</li>
+  <li>Script the hand-run steps so one command rebuilds everything.</li>
+  <li>Fix the press-kit accessibility and the 34 MB product sheet.</li>
+  <li>Report the lightcraft exit-132 crash and the filmcraft MP4 fast-start issue to the Artcraft project.</li>
+</ol>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,1 @@
+[["image.imageSize", {"width": 2400, "height": 1600, "resample": "bicubic"}], ["filter.sharpen.unsharpMask", {"amount": 40, "radius": 0.6, "threshold": 2}]]

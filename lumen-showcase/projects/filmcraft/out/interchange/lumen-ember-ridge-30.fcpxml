@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fcpxml>
+<fcpxml version="1.10">
+  <resources>
+    <format id="r1" name="FFVideoFormat1080p30" frameDuration="1/30s" width="1920" height="1080"/>
+    <asset id="r2" name="lumen-logo-sting_1080p30.mp4" start="0s" duration="5s" hasVideo="1" hasAudio="0" format="r1">
+      <media-rep kind="original-media" src="file:///C:/work/Downloads/artcraft_jay_E/projects/effectcraft/out/renders/lumen-logo-sting_1080p30.mp4"/>
+    </asset>
+    <effect id="r3" name="Cross Dissolve" uid="filmcraft.cross_dissolve"/>
+    <asset id="r4" name="title-card-ember-ridge_1080p30.mp4" start="0s" duration="4s" hasVideo="1" hasAudio="0" format="r1">
+      <media-rep kind="original-media" src="file:///C:/work/Downloads/artcraft_jay_E/projects/effectcraft/out/renders/title-card-ember-ridge_1080p30.mp4"/>
+    </asset>
+    <format id="r5" name="FFVideoFormat2000p2997" frameDuration="1001/30000s" width="3000" height="2000"/>
+    <asset id="r6" name="LUM_0001_wide.tif" start="0s" duration="5s" hasVideo="1" hasAudio="0" format="r5">
+      <media-rep kind="original-media" src="file:///C:/work/Downloads/artcraft_jay_E/projects/lightcraft/out/video-master-srgb-16bit-full/LUM_0001_wide.tif"/>
+    </asset>
+    <asset id="r7" name="end-card_1080p30.mp4" start="0s" duration="4s" hasVideo="1" hasAudio="0" format="r1">
+      <media-rep kind="original-media" src="file:///C:/work/Downloads/artcraft_jay_E/projects/effectcraft/out/renders/end-card_1080p30.mp4"/>
+    </asset>
+    <format id="r8" name="FFVideoFormat1350p2997" frameDuration="1001/30000s" width="1080" height="1350"/>
+    <asset id="r9" name="LUM_0002_label-detail.jpg" start="0s" duration="5s" hasVideo="1" hasAudio="0" format="r8">
+      <media-rep kind="original-media" src="file:///C:/work/Downloads/artcraft_jay_E/projects/lightcraft/out/web-jpeg-srgb-2048/LUM_0002_label-detail.jpg"/>
+    </asset>
+    <asset id="r10" name="lower-third-origin_prores4444_alpha.mov" start="0s" duration="6s" hasVideo="1" hasAudio="0" format="r1">
+      <media-rep kind="original-media" src="file:///C:/work/Downloads/artcraft_jay_E/projects/effectcraft/out/renders/lower-third-origin_prores4444_alpha.mov"/>
+    </asset>
+    <asset id="r11" name="lower-third-mara_prores4444_alpha.mov" start="0s" duration="6s" hasVideo="1" hasAudio="0" format="r1">
+      <media-rep kind="original-media" src="file:///C:/work/Downloads/artcraft_jay_E/projects/effectcraft/out/renders/lower-third-mara_prores4444_alpha.mov"/>
+    </asset>
+    <asset id="r12" name="lumen-jingle-30s.mp3" start="0s" duration="3753/125s" hasVideo="0" hasAudio="1" audioSources="1" audioChannels="2" audioRate="48000">
+      <media-rep kind="original-media" src="file:///C:/work/Downloads/artcraft_jay_E/projects/filmcraft/music/lumen-jingle-30s.mp3"/>
+    </asset>
+  </resources>
+  <library>
+    <event name="Untitled">
+      <project name="Lumen Ember Ridge 30 - 1080p30">
+        <sequence format="r1" duration="30s" tcStart="0s" tcFormat="NDF" audioLayout="stereo" audioRate="48k">
+          <spine>
+            <asset-clip ref="r2" name="lumen-logo-sting_1080p30.mp4" offset="0s" start="0s" duration="5s">
+              <adjust-transform position="0 0" anchor="0 0"/>
+              <asset-clip ref="r12" lane="-1" name="lumen-jingle-30s.mp3" offset="0s" start="0s" duration="30s">
+                <adjust-volume amount="-6dB"/>
+              </asset-clip>
+            </asset-clip>
+            <transition name="Cross Dissolve" offset="144/30s" duration="12/30s"><filter-video ref="r3" name="Cross Dissolve"/></transition>
+            <asset-clip ref="r4" name="title-card-ember-ridge_1080p30.mp4" offset="5s" start="0s" duration="4s">
+              <adjust-transform position="0 0" anchor="0 0"/>
+            </asset-clip>
+            <transition name="Cross Dissolve" offset="264/30s" duration="12/30s"><filter-video ref="r3" name="Cross Dissolve"/></transition>
+            <asset-clip ref="r6" name="LUM_0001_wide.tif" offset="9s" start="0s" duration="6s">
+              <adjust-transform position="0 0" scale="0.7 0.7" anchor="50 -42.592592592592595"/>
+              <asset-clip ref="r10" lane="2" name="lower-third-origin_prores4444_alpha.mov" offset="15/30s" start="0s" duration="165/30s">
+                <adjust-transform position="0 0" anchor="0 0"/>
+              </asset-clip>
+            </asset-clip>
+            <gap name="Color Matte" offset="15s" start="15s" duration="4s">
+              <asset-clip ref="r9" lane="1" name="LUM_0002_label-detail.jpg" offset="15s" start="0s" duration="4s">
+                <adjust-transform position="0 0" scale="0.86 0.86" anchor="-38.88888888888889 -12.5"/>
+              </asset-clip>
+              <asset-clip ref="r11" lane="2" name="lower-third-mara_prores4444_alpha.mov" offset="558/30s" start="0s" duration="6s">
+                <adjust-transform position="0 0" anchor="0 0"/>
+              </asset-clip>
+            </gap>
+            <transition name="Cross Dissolve" offset="564/30s" duration="12/30s"><filter-video ref="r3" name="Cross Dissolve"/></transition>
+            <asset-clip ref="r6" name="LUM_0001_wide.tif" offset="19s" start="0s" duration="4s">
+              <adjust-transform position="-51.85185185185185 43.51851851851852" scale="1.04 1.04" anchor="50 -42.592592592592595"/>
+            </asset-clip>
+            <transition name="Cross Dissolve" offset="684/30s" duration="12/30s"><filter-video ref="r3" name="Cross Dissolve"/></transition>
+            <asset-clip ref="r6" name="LUM_0001_wide.tif" offset="23s" start="0s" duration="3s">
+              <adjust-transform position="44.44444444444444 42.592592592592595" anchor="50 -42.592592592592595"/>
+            </asset-clip>
+            <transition name="Cross Dissolve" offset="774/30s" duration="12/30s"><filter-video ref="r3" name="Cross Dissolve"/></transition>
+            <asset-clip ref="r7" name="end-card_1080p30.mp4" offset="26s" start="0s" duration="4s">
+              <adjust-transform position="0 0" anchor="0 0"/>
+            </asset-clip>
+          </spine>
+        </sequence>
+      </project>
+    </event>
+  </library>
+</fcpxml>

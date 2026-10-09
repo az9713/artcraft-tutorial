@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Lumen QC</title>
+<style>body{background:#111;color:#ddd;font:14px system-ui;margin:16px}h2{color:#f2843a;margin:18px 0 6px}.row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-start}video,img,object{background:#333;border:1px solid #444}#lot{width:480px;height:270px;background:#1d1410}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script></head><body>
+<h2>vectorcraft SVG (browser-rendered)</h2><div class="row"><img src="../vectorcraft/out/screens/SVG/01-Primary-Stacked.svg" width="220"><img src="../vectorcraft/out/screens/SVG/08-Bag-Label-100x140mm.svg" width="160"><img src="../vectorcraft/out/app-icon/04-App-Icon.svg" width="120"></div>
+<h2>filmcraft :30 and 9:16 (browser-decoded)</h2><div class="row"><video id="v30" src="../filmcraft/out/lumen-ember-ridge-30_1080p30_h264.mp4" width="480" controls muted></video><video id="v15" src="../filmcraft/out/lumen-ember-ridge-15_1080x1920_h264.mp4" height="270" controls muted></video></div>
+<h2>effectcraft Lottie (lottie-web) and alpha WebM over a checker</h2><div class="row"><div id="lot"></div><video id="vw" src="../effectcraft/out/renders/lumen-logo-sting-web_alpha.webm" width="480" muted style="background:repeating-conic-gradient(#888 0 25%,#ccc 0 50%) 0 0/20px 20px"></video></div>
+<h2>pdfcraft press kit (Chrome PDF viewer)</h2><object data="../pdfcraft/out/lumen-press-kit-2026-10.pdf#page=1" type="application/pdf" width="640" height="460"></object>
+<script>
+window.qc={};
+const a=lottie.loadAnimation({container:document.getElementById('lot'),renderer:'svg',loop:false,autoplay:false,path:'../effectcraft/out/renders/lumen-logo-sting-web.lottie.json'});
+a.addEventListener('DOMLoaded',()=>{a.goToAndStop(90,true);qc.lottie={frames:a.totalFrames,fr:a.frameRate,w:a.animationData.w,h:a.animationData.h,layers:a.animationData.layers.length};});
+for(const [id,t] of [['v30',12],['v15',8],['vw',2.5]]){const v=document.getElementById(id);v.addEventListener('loadedmetadata',()=>{qc[id]={dur:v.duration,w:v.videoWidth,h:v.videoHeight};v.currentTime=t;});v.addEventListener('error',()=>{qc[id]={error:v.error&&v.error.code};});}
+document.querySelectorAll('img').forEach((im,i)=>im.addEventListener('load',()=>{qc['img'+i]={w:im.naturalWidth,h:im.naturalHeight}}));
+</script></body></html>

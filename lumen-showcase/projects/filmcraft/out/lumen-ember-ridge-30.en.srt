@@ -1,0 +1,28 @@
+1
+00:00:01,000 --> 00:00:04,500
+Lumen Coffee Roasters
+
+2
+00:00:05,300 --> 00:00:08,700
+New single origin: Ember Ridge.
+
+3
+00:00:09,600 --> 00:00:14,600
+Grown at 2,100 m in Guji, Ethiopia. Washed.
+
+4
+00:00:15,200 --> 00:00:18,800
+Bergamot, ripe apricot, cacao nib.
+
+5
+00:00:19,200 --> 00:00:22,800
+Roasted light-medium by Mara Okafor, Head Roaster.
+
+6
+00:00:23,100 --> 00:00:25,800
+Whole bean, 340 g.
+
+7
+00:00:26,300 --> 00:00:29,700
+Available now at lumen-coffee.example
+

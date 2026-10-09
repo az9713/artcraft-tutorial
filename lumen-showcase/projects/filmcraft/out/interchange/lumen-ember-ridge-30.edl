@@ -1,0 +1,52 @@
+TITLE: Lumen Ember Ridge 30 - 1080p30
+FCM: NON-DROP FRAME
+
+001  LUMEN-LO V     C        00:00:00:00 00:00:04:24 00:00:00:00 00:00:04:24
+* FROM CLIP NAME: lumen-logo-sting_1080p30.mp4
+* SOURCE FILE: ../../../effectcraft/out/renders/lumen-logo-sting_1080p30.mp4
+
+002  LUMEN-JI A     C        00:00:00:00 00:00:30:00 00:00:00:00 00:00:30:00
+* FROM CLIP NAME: lumen-jingle-30s.mp3
+* SOURCE FILE: ../../music/lumen-jingle-30s.mp3
+
+003  LUMEN-LO V     C        00:00:04:24 00:00:04:24 00:00:04:24 00:00:04:24
+003  TITLE-CA V     D    012 00:00:00:00 00:00:04:00 00:00:04:24 00:00:08:24
+* FROM CLIP NAME: lumen-logo-sting_1080p30.mp4
+* TO CLIP NAME: title-card-ember-ridge_1080p30.mp4
+* SOURCE FILE: ../../../effectcraft/out/renders/lumen-logo-sting_1080p30.mp4
+* SOURCE FILE: ../../../effectcraft/out/renders/title-card-ember-ridge_1080p30.mp4
+* EFFECT NAME: CROSS DISSOLVE
+
+004  TITLE-CA V     C        00:00:03:24 00:00:03:24 00:00:08:24 00:00:08:24
+004  LUM_0001 V     D    012 00:00:00:00 00:00:06:06 00:00:08:24 00:00:15:00
+* FROM CLIP NAME: title-card-ember-ridge_1080p30.mp4
+* TO CLIP NAME: LUM_0001_wide.tif
+* SOURCE FILE: ../../../effectcraft/out/renders/title-card-ember-ridge_1080p30.mp4
+* SOURCE FILE: ../../../lightcraft/out/video-master-srgb-16bit-full/LUM_0001_wide.tif
+* EFFECT NAME: CROSS DISSOLVE
+
+005  BL       V     C        00:00:00:00 00:00:03:24 00:00:15:00 00:00:18:24
+* FROM CLIP NAME: Color Matte
+
+006  BL       V     C        00:00:03:24 00:00:03:24 00:00:18:24 00:00:18:24
+006  LUM_0001 V     D    012 00:00:00:00 00:00:04:00 00:00:18:24 00:00:22:24
+* FROM CLIP NAME: Color Matte
+* TO CLIP NAME: LUM_0001_wide.tif
+* SOURCE FILE: ../../../lightcraft/out/video-master-srgb-16bit-full/LUM_0001_wide.tif
+* EFFECT NAME: CROSS DISSOLVE
+
+007  LUM_0001 V     C        00:00:03:24 00:00:03:24 00:00:22:24 00:00:22:24
+007  LUM_0001 V     D    012 00:00:00:00 00:00:03:00 00:00:22:24 00:00:25:24
+* FROM CLIP NAME: LUM_0001_wide.tif
+* TO CLIP NAME: LUM_0001_wide.tif
+* SOURCE FILE: ../../../lightcraft/out/video-master-srgb-16bit-full/LUM_0001_wide.tif
+* SOURCE FILE: ../../../lightcraft/out/video-master-srgb-16bit-full/LUM_0001_wide.tif
+* EFFECT NAME: CROSS DISSOLVE
+
+008  LUM_0001 V     C        00:00:02:24 00:00:02:24 00:00:25:24 00:00:25:24
+008  END-CARD V     D    012 00:00:00:00 00:00:04:06 00:00:25:24 00:00:30:00
+* FROM CLIP NAME: LUM_0001_wide.tif
+* TO CLIP NAME: end-card_1080p30.mp4
+* SOURCE FILE: ../../../lightcraft/out/video-master-srgb-16bit-full/LUM_0001_wide.tif
+* SOURCE FILE: ../../../effectcraft/out/renders/end-card_1080p30.mp4
+* EFFECT NAME: CROSS DISSOLVE

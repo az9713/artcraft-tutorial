@@ -20,7 +20,12 @@ This guide started from the YouTube video [Someone Just Rebuilt Adobe for Free, 
 
 I read the GitHub pages and READMEs on 2026-10-08. I did not run any app, install any file, or inspect source code. The "clean-room" claim comes from the video and the READMEs and is unchecked. The prompts are examples and are untested.
 
+## Production showcase: all 7 crafts, one launch
+
+[`lumen-showcase/`](lumen-showcase/) holds a production test made after the guide: one fictional client, Lumen Coffee Roasters, and every artifact made by a craft app driven by Claude Code. It has the build scripts, the outputs of each craft, and a development journey: [`lumen-showcase/DEVELOPMENT-JOURNEY.html`](lumen-showcase/DEVELOPMENT-JOURNEY.html) (live: https://az9713.github.io/artcraft-tutorial/lumen-showcase/DEVELOPMENT-JOURNEY.html). The file list per craft is in [`lumen-showcase/README.md`](lumen-showcase/README.md).
+
 ## Files
 
 - `index.html` — the guide (single file, dark mode).
 - `README.md` — this file.
+- `lumen-showcase/` — the production test.

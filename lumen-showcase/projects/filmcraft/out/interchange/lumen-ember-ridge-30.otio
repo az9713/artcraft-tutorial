@@ -1,0 +1,2171 @@
+{
+  "OTIO_SCHEMA": "Timeline.1",
+  "global_start_time": {
+    "OTIO_SCHEMA": "RationalTime.1",
+    "rate": 30.0,
+    "value": 0.0
+  },
+  "metadata": {
+    "filmcraft": {
+      "item": 6,
+      "label": "Forest",
+      "master_effects": [],
+      "master_volume_db": 0.0,
+      "settings": {
+        "audio_master": "Stereo",
+        "color": {
+          "auto_tone_map": true,
+          "wide_gamut": false,
+          "working": "Rec709"
+        },
+        "drop_frame": false,
+        "frame_rate": {
+          "den": 1,
+          "num": 30
+        },
+        "height": 1080,
+        "max_bit_depth": false,
+        "max_render_quality": false,
+        "par": [
+          1,
+          1
+        ],
+        "preset": "1920x1080 30",
+        "preview_codec": "ProRes 422",
+        "sample_rate": 48000,
+        "width": 1920,
+        "working_space": "Rec. 709"
+      },
+      "start_timecode": 0
+    }
+  },
+  "name": "Lumen Ember Ridge 30 - 1080p30",
+  "tracks": {
+    "OTIO_SCHEMA": "Stack.1",
+    "children": [
+      {
+        "OTIO_SCHEMA": "Track.1",
+        "children": [
+          {
+            "OTIO_SCHEMA": "Clip.2",
+            "active_media_reference_key": "DEFAULT_MEDIA",
+            "effects": [],
+            "enabled": true,
+            "markers": [],
+            "media_references": {
+              "DEFAULT_MEDIA": {
+                "OTIO_SCHEMA": "ExternalReference.1",
+                "available_image_bounds": null,
+                "available_range": {
+                  "OTIO_SCHEMA": "TimeRange.1",
+                  "duration": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 150.0
+                  },
+                  "start_time": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 0.0
+                  }
+                },
+                "metadata": {
+                  "filmcraft": {
+                    "info": {
+                      "audio": null,
+                      "container": "MPEG-4",
+                      "duration": 1270080000000,
+                      "file_size": 5943417,
+                      "kind": "Movie",
+                      "name": "lumen-logo-sting_1080p30.mp4",
+                      "start_timecode": null,
+                      "video": {
+                        "bitrate": 9505977,
+                        "codec": "H.264 (High)",
+                        "color": {
+                          "matrix": "Bt709",
+                          "primaries": "Bt709",
+                          "range": "Limited",
+                          "transfer": "Bt709"
+                        },
+                        "frame_rate": {
+                          "den": 1,
+                          "num": 30
+                        },
+                        "has_alpha": false,
+                        "height": 1080,
+                        "par": [
+                          1,
+                          1
+                        ],
+                        "pixel_format": "YUV 4:2:0 8-bit",
+                        "width": 1920
+                      }
+                    },
+                    "item": 7,
+                    "label": "Violet",
+                    "offline": false
+                  }
+                },
+                "name": "lumen-logo-sting_1080p30.mp4",
+                "target_url": "../../../effectcraft/out/renders/lumen-logo-sting_1080p30.mp4"
+              }
+            },
+            "metadata": {
+              "filmcraft": {
+                "duration_ticks": 1270080000000,
+                "effects": [
+                  {
+                    "effect": "motion",
+                    "enabled": true,
+                    "params": {
+                      "anchor": {
+                        "value": {
+                          "Vec2": {
+                            "x": 960.0,
+                            "y": 540.0
+                          }
+                        }
+                      },
+                      "anti_flicker": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "position": {
+                        "value": {
+                          "Vec2": {
+                            "x": 960.0,
+                            "y": 540.0
+                          }
+                        }
+                      },
+                      "rotation": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "scale": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      },
+                      "scale_width": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      },
+                      "uniform_scale": {
+                        "value": {
+                          "Bool": true
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "opacity",
+                    "enabled": true,
+                    "params": {
+                      "blend": {
+                        "value": {
+                          "Choice": 0
+                        }
+                      },
+                      "opacity": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "time_remap",
+                    "enabled": true,
+                    "params": {
+                      "speed": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  }
+                ],
+                "gain_db": 0.0,
+                "group": null,
+                "label": "Violet",
+                "link": null,
+                "scale_to_frame": false,
+                "source_in_ticks": 0
+              }
+            },
+            "name": "lumen-logo-sting_1080p30.mp4",
+            "source_range": {
+              "OTIO_SCHEMA": "TimeRange.1",
+              "duration": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 150.0
+              },
+              "start_time": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 0.0
+              }
+            }
+          },
+          {
+            "OTIO_SCHEMA": "Transition.1",
+            "in_offset": {
+              "OTIO_SCHEMA": "RationalTime.1",
+              "rate": 30.0,
+              "value": 6.0
+            },
+            "metadata": {
+              "filmcraft": {
+                "align": "CenterAtCut",
+                "effect": {
+                  "effect": "cross_dissolve",
+                  "enabled": true,
+                  "params": {}
+                },
+                "reverse": false
+              }
+            },
+            "name": "Cross Dissolve",
+            "out_offset": {
+              "OTIO_SCHEMA": "RationalTime.1",
+              "rate": 30.0,
+              "value": 6.0
+            },
+            "transition_type": "SMPTE_Dissolve"
+          },
+          {
+            "OTIO_SCHEMA": "Clip.2",
+            "active_media_reference_key": "DEFAULT_MEDIA",
+            "effects": [],
+            "enabled": true,
+            "markers": [],
+            "media_references": {
+              "DEFAULT_MEDIA": {
+                "OTIO_SCHEMA": "ExternalReference.1",
+                "available_image_bounds": null,
+                "available_range": {
+                  "OTIO_SCHEMA": "TimeRange.1",
+                  "duration": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 120.0
+                  },
+                  "start_time": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 0.0
+                  }
+                },
+                "metadata": {
+                  "filmcraft": {
+                    "info": {
+                      "audio": null,
+                      "container": "MPEG-4",
+                      "duration": 1016064000000,
+                      "file_size": 669324,
+                      "kind": "Movie",
+                      "name": "title-card-ember-ridge_1080p30.mp4",
+                      "start_timecode": null,
+                      "video": {
+                        "bitrate": 1334870,
+                        "codec": "H.264 (High)",
+                        "color": {
+                          "matrix": "Bt709",
+                          "primaries": "Bt709",
+                          "range": "Limited",
+                          "transfer": "Bt709"
+                        },
+                        "frame_rate": {
+                          "den": 1,
+                          "num": 30
+                        },
+                        "has_alpha": false,
+                        "height": 1080,
+                        "par": [
+                          1,
+                          1
+                        ],
+                        "pixel_format": "YUV 4:2:0 8-bit",
+                        "width": 1920
+                      }
+                    },
+                    "item": 8,
+                    "label": "Violet",
+                    "offline": false
+                  }
+                },
+                "name": "title-card-ember-ridge_1080p30.mp4",
+                "target_url": "../../../effectcraft/out/renders/title-card-ember-ridge_1080p30.mp4"
+              }
+            },
+            "metadata": {
+              "filmcraft": {
+                "duration_ticks": 1016064000000,
+                "effects": [
+                  {
+                    "effect": "motion",
+                    "enabled": true,
+                    "params": {
+                      "anchor": {
+                        "value": {
+                          "Vec2": {
+                            "x": 960.0,
+                            "y": 540.0
+                          }
+                        }
+                      },
+                      "anti_flicker": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "position": {
+                        "value": {
+                          "Vec2": {
+                            "x": 960.0,
+                            "y": 540.0
+                          }
+                        }
+                      },
+                      "rotation": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "scale": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      },
+                      "scale_width": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      },
+                      "uniform_scale": {
+                        "value": {
+                          "Bool": true
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "opacity",
+                    "enabled": true,
+                    "params": {
+                      "blend": {
+                        "value": {
+                          "Choice": 0
+                        }
+                      },
+                      "opacity": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "time_remap",
+                    "enabled": true,
+                    "params": {
+                      "speed": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  }
+                ],
+                "gain_db": 0.0,
+                "group": null,
+                "label": "Violet",
+                "link": null,
+                "scale_to_frame": false,
+                "source_in_ticks": 0
+              }
+            },
+            "name": "title-card-ember-ridge_1080p30.mp4",
+            "source_range": {
+              "OTIO_SCHEMA": "TimeRange.1",
+              "duration": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 120.0
+              },
+              "start_time": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 0.0
+              }
+            }
+          },
+          {
+            "OTIO_SCHEMA": "Transition.1",
+            "in_offset": {
+              "OTIO_SCHEMA": "RationalTime.1",
+              "rate": 30.0,
+              "value": 6.0
+            },
+            "metadata": {
+              "filmcraft": {
+                "align": "CenterAtCut",
+                "effect": {
+                  "effect": "cross_dissolve",
+                  "enabled": true,
+                  "params": {}
+                },
+                "reverse": false
+              }
+            },
+            "name": "Cross Dissolve",
+            "out_offset": {
+              "OTIO_SCHEMA": "RationalTime.1",
+              "rate": 30.0,
+              "value": 6.0
+            },
+            "transition_type": "SMPTE_Dissolve"
+          },
+          {
+            "OTIO_SCHEMA": "Clip.2",
+            "active_media_reference_key": "DEFAULT_MEDIA",
+            "effects": [],
+            "enabled": true,
+            "markers": [],
+            "media_references": {
+              "DEFAULT_MEDIA": {
+                "OTIO_SCHEMA": "ExternalReference.1",
+                "available_image_bounds": null,
+                "available_range": {
+                  "OTIO_SCHEMA": "TimeRange.1",
+                  "duration": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 150.0
+                  },
+                  "start_time": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 0.0
+                  }
+                },
+                "metadata": {
+                  "filmcraft": {
+                    "info": {
+                      "audio": null,
+                      "container": "Image",
+                      "duration": 1270080000000,
+                      "file_size": 28276578,
+                      "kind": "Still",
+                      "name": "LUM_0001_wide.tif",
+                      "start_timecode": null,
+                      "video": {
+                        "bitrate": null,
+                        "codec": "TIF",
+                        "color": {
+                          "matrix": "Bt709",
+                          "primaries": "Bt709",
+                          "range": "Full",
+                          "transfer": "Srgb"
+                        },
+                        "frame_rate": {
+                          "den": 1001,
+                          "num": 30000
+                        },
+                        "has_alpha": false,
+                        "height": 2000,
+                        "par": [
+                          1,
+                          1
+                        ],
+                        "pixel_format": "RGB 8-bit",
+                        "width": 3000
+                      }
+                    },
+                    "item": 13,
+                    "label": "Lavender",
+                    "offline": false
+                  }
+                },
+                "name": "LUM_0001_wide.tif",
+                "target_url": "../../../lightcraft/out/video-master-srgb-16bit-full/LUM_0001_wide.tif"
+              }
+            },
+            "metadata": {
+              "filmcraft": {
+                "duration_ticks": 1524096000000,
+                "effects": [
+                  {
+                    "effect": "motion",
+                    "enabled": true,
+                    "params": {
+                      "anchor": {
+                        "value": {
+                          "Vec2": {
+                            "x": 1500.0,
+                            "y": 1000.0
+                          }
+                        }
+                      },
+                      "anti_flicker": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "position": {
+                        "value": {
+                          "Vec2": {
+                            "x": 960.0,
+                            "y": 540.0
+                          }
+                        }
+                      },
+                      "rotation": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "scale": {
+                        "value": {
+                          "Float": 70.0
+                        }
+                      },
+                      "scale_width": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      },
+                      "uniform_scale": {
+                        "value": {
+                          "Bool": true
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "opacity",
+                    "enabled": true,
+                    "params": {
+                      "blend": {
+                        "value": {
+                          "Choice": 0
+                        }
+                      },
+                      "opacity": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "time_remap",
+                    "enabled": true,
+                    "params": {
+                      "speed": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  }
+                ],
+                "gain_db": 0.0,
+                "group": null,
+                "label": "Lavender",
+                "link": null,
+                "scale_to_frame": false,
+                "source_in_ticks": 0
+              }
+            },
+            "name": "LUM_0001_wide.tif",
+            "source_range": {
+              "OTIO_SCHEMA": "TimeRange.1",
+              "duration": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 180.0
+              },
+              "start_time": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 0.0
+              }
+            }
+          },
+          {
+            "OTIO_SCHEMA": "Clip.2",
+            "active_media_reference_key": "DEFAULT_MEDIA",
+            "effects": [],
+            "enabled": true,
+            "markers": [],
+            "media_references": {
+              "DEFAULT_MEDIA": {
+                "OTIO_SCHEMA": "GeneratorReference.1",
+                "available_range": {
+                  "OTIO_SCHEMA": "TimeRange.1",
+                  "duration": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 900.0
+                  },
+                  "start_time": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 0.0
+                  }
+                },
+                "generator_kind": "SolidColor",
+                "metadata": {
+                  "filmcraft": {
+                    "generator": {
+                      "ColorMatte": {
+                        "color": [
+                          0.11372549086809158,
+                          0.0784313753247261,
+                          0.062745101749897,
+                          1.0
+                        ]
+                      }
+                    },
+                    "info": {
+                      "audio": null,
+                      "container": "Synthetic",
+                      "duration": 7620480000000,
+                      "file_size": null,
+                      "kind": "Synthetic",
+                      "name": "Color Matte",
+                      "start_timecode": null,
+                      "video": {
+                        "bitrate": null,
+                        "codec": "Synthetic",
+                        "color": {
+                          "matrix": "Bt709",
+                          "primaries": "Bt709",
+                          "range": "Full",
+                          "transfer": "Srgb"
+                        },
+                        "frame_rate": {
+                          "den": 1,
+                          "num": 30
+                        },
+                        "has_alpha": false,
+                        "height": 1080,
+                        "par": [
+                          1,
+                          1
+                        ],
+                        "pixel_format": "RGBA 8-bit",
+                        "width": 1920
+                      }
+                    },
+                    "item": 16
+                  }
+                },
+                "name": "Color Matte",
+                "parameters": {
+                  "color": [
+                    0.11372549086809158,
+                    0.0784313753247261,
+                    0.062745101749897,
+                    1.0
+                  ]
+                }
+              }
+            },
+            "metadata": {
+              "filmcraft": {
+                "duration_ticks": 1016064000000,
+                "effects": [
+                  {
+                    "effect": "motion",
+                    "enabled": true,
+                    "params": {
+                      "anchor": {
+                        "value": {
+                          "Vec2": {
+                            "x": 960.0,
+                            "y": 540.0
+                          }
+                        }
+                      },
+                      "anti_flicker": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "position": {
+                        "value": {
+                          "Vec2": {
+                            "x": 960.0,
+                            "y": 540.0
+                          }
+                        }
+                      },
+                      "rotation": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "scale": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      },
+                      "scale_width": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      },
+                      "uniform_scale": {
+                        "value": {
+                          "Bool": true
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "opacity",
+                    "enabled": true,
+                    "params": {
+                      "blend": {
+                        "value": {
+                          "Choice": 0
+                        }
+                      },
+                      "opacity": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "time_remap",
+                    "enabled": true,
+                    "params": {
+                      "speed": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  }
+                ],
+                "gain_db": 0.0,
+                "group": null,
+                "label": "Lavender",
+                "link": null,
+                "scale_to_frame": false,
+                "source_in_ticks": 0
+              }
+            },
+            "name": "Color Matte",
+            "source_range": {
+              "OTIO_SCHEMA": "TimeRange.1",
+              "duration": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 120.0
+              },
+              "start_time": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 0.0
+              }
+            }
+          },
+          {
+            "OTIO_SCHEMA": "Transition.1",
+            "in_offset": {
+              "OTIO_SCHEMA": "RationalTime.1",
+              "rate": 30.0,
+              "value": 6.0
+            },
+            "metadata": {
+              "filmcraft": {
+                "align": "CenterAtCut",
+                "effect": {
+                  "effect": "cross_dissolve",
+                  "enabled": true,
+                  "params": {}
+                },
+                "reverse": false
+              }
+            },
+            "name": "Cross Dissolve",
+            "out_offset": {
+              "OTIO_SCHEMA": "RationalTime.1",
+              "rate": 30.0,
+              "value": 6.0
+            },
+            "transition_type": "SMPTE_Dissolve"
+          },
+          {
+            "OTIO_SCHEMA": "Clip.2",
+            "active_media_reference_key": "DEFAULT_MEDIA",
+            "effects": [],
+            "enabled": true,
+            "markers": [],
+            "media_references": {
+              "DEFAULT_MEDIA": {
+                "OTIO_SCHEMA": "ExternalReference.1",
+                "available_image_bounds": null,
+                "available_range": {
+                  "OTIO_SCHEMA": "TimeRange.1",
+                  "duration": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 150.0
+                  },
+                  "start_time": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 0.0
+                  }
+                },
+                "metadata": {
+                  "filmcraft": {
+                    "info": {
+                      "audio": null,
+                      "container": "Image",
+                      "duration": 1270080000000,
+                      "file_size": 28276578,
+                      "kind": "Still",
+                      "name": "LUM_0001_wide.tif",
+                      "start_timecode": null,
+                      "video": {
+                        "bitrate": null,
+                        "codec": "TIF",
+                        "color": {
+                          "matrix": "Bt709",
+                          "primaries": "Bt709",
+                          "range": "Full",
+                          "transfer": "Srgb"
+                        },
+                        "frame_rate": {
+                          "den": 1001,
+                          "num": 30000
+                        },
+                        "has_alpha": false,
+                        "height": 2000,
+                        "par": [
+                          1,
+                          1
+                        ],
+                        "pixel_format": "RGB 8-bit",
+                        "width": 3000
+                      }
+                    },
+                    "item": 13,
+                    "label": "Lavender",
+                    "offline": false
+                  }
+                },
+                "name": "LUM_0001_wide.tif",
+                "target_url": "../../../lightcraft/out/video-master-srgb-16bit-full/LUM_0001_wide.tif"
+              }
+            },
+            "metadata": {
+              "filmcraft": {
+                "duration_ticks": 1016064000000,
+                "effects": [
+                  {
+                    "effect": "motion",
+                    "enabled": true,
+                    "params": {
+                      "anchor": {
+                        "value": {
+                          "Vec2": {
+                            "x": 1500.0,
+                            "y": 1000.0
+                          }
+                        }
+                      },
+                      "anti_flicker": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "position": {
+                        "value": {
+                          "Vec2": {
+                            "x": 400.0,
+                            "y": 70.0
+                          }
+                        }
+                      },
+                      "rotation": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "scale": {
+                        "value": {
+                          "Float": 104.0
+                        }
+                      },
+                      "scale_width": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      },
+                      "uniform_scale": {
+                        "value": {
+                          "Bool": true
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "opacity",
+                    "enabled": true,
+                    "params": {
+                      "blend": {
+                        "value": {
+                          "Choice": 0
+                        }
+                      },
+                      "opacity": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "time_remap",
+                    "enabled": true,
+                    "params": {
+                      "speed": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  }
+                ],
+                "gain_db": 0.0,
+                "group": null,
+                "label": "Lavender",
+                "link": null,
+                "scale_to_frame": false,
+                "source_in_ticks": 0
+              }
+            },
+            "name": "LUM_0001_wide.tif",
+            "source_range": {
+              "OTIO_SCHEMA": "TimeRange.1",
+              "duration": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 120.0
+              },
+              "start_time": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 0.0
+              }
+            }
+          },
+          {
+            "OTIO_SCHEMA": "Transition.1",
+            "in_offset": {
+              "OTIO_SCHEMA": "RationalTime.1",
+              "rate": 30.0,
+              "value": 6.0
+            },
+            "metadata": {
+              "filmcraft": {
+                "align": "CenterAtCut",
+                "effect": {
+                  "effect": "cross_dissolve",
+                  "enabled": true,
+                  "params": {}
+                },
+                "reverse": false
+              }
+            },
+            "name": "Cross Dissolve",
+            "out_offset": {
+              "OTIO_SCHEMA": "RationalTime.1",
+              "rate": 30.0,
+              "value": 6.0
+            },
+            "transition_type": "SMPTE_Dissolve"
+          },
+          {
+            "OTIO_SCHEMA": "Clip.2",
+            "active_media_reference_key": "DEFAULT_MEDIA",
+            "effects": [],
+            "enabled": true,
+            "markers": [],
+            "media_references": {
+              "DEFAULT_MEDIA": {
+                "OTIO_SCHEMA": "ExternalReference.1",
+                "available_image_bounds": null,
+                "available_range": {
+                  "OTIO_SCHEMA": "TimeRange.1",
+                  "duration": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 150.0
+                  },
+                  "start_time": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 0.0
+                  }
+                },
+                "metadata": {
+                  "filmcraft": {
+                    "info": {
+                      "audio": null,
+                      "container": "Image",
+                      "duration": 1270080000000,
+                      "file_size": 28276578,
+                      "kind": "Still",
+                      "name": "LUM_0001_wide.tif",
+                      "start_timecode": null,
+                      "video": {
+                        "bitrate": null,
+                        "codec": "TIF",
+                        "color": {
+                          "matrix": "Bt709",
+                          "primaries": "Bt709",
+                          "range": "Full",
+                          "transfer": "Srgb"
+                        },
+                        "frame_rate": {
+                          "den": 1001,
+                          "num": 30000
+                        },
+                        "has_alpha": false,
+                        "height": 2000,
+                        "par": [
+                          1,
+                          1
+                        ],
+                        "pixel_format": "RGB 8-bit",
+                        "width": 3000
+                      }
+                    },
+                    "item": 13,
+                    "label": "Lavender",
+                    "offline": false
+                  }
+                },
+                "name": "LUM_0001_wide.tif",
+                "target_url": "../../../lightcraft/out/video-master-srgb-16bit-full/LUM_0001_wide.tif"
+              }
+            },
+            "metadata": {
+              "filmcraft": {
+                "duration_ticks": 762048000000,
+                "effects": [
+                  {
+                    "effect": "motion",
+                    "enabled": true,
+                    "params": {
+                      "anchor": {
+                        "value": {
+                          "Vec2": {
+                            "x": 1500.0,
+                            "y": 1000.0
+                          }
+                        }
+                      },
+                      "anti_flicker": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "position": {
+                        "value": {
+                          "Vec2": {
+                            "x": 1440.0,
+                            "y": 80.0
+                          }
+                        }
+                      },
+                      "rotation": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "scale": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      },
+                      "scale_width": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      },
+                      "uniform_scale": {
+                        "value": {
+                          "Bool": true
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "opacity",
+                    "enabled": true,
+                    "params": {
+                      "blend": {
+                        "value": {
+                          "Choice": 0
+                        }
+                      },
+                      "opacity": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "time_remap",
+                    "enabled": true,
+                    "params": {
+                      "speed": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  }
+                ],
+                "gain_db": 0.0,
+                "group": null,
+                "label": "Lavender",
+                "link": null,
+                "scale_to_frame": false,
+                "source_in_ticks": 0
+              }
+            },
+            "name": "LUM_0001_wide.tif",
+            "source_range": {
+              "OTIO_SCHEMA": "TimeRange.1",
+              "duration": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 90.0
+              },
+              "start_time": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 0.0
+              }
+            }
+          },
+          {
+            "OTIO_SCHEMA": "Transition.1",
+            "in_offset": {
+              "OTIO_SCHEMA": "RationalTime.1",
+              "rate": 30.0,
+              "value": 6.0
+            },
+            "metadata": {
+              "filmcraft": {
+                "align": "CenterAtCut",
+                "effect": {
+                  "effect": "cross_dissolve",
+                  "enabled": true,
+                  "params": {}
+                },
+                "reverse": false
+              }
+            },
+            "name": "Cross Dissolve",
+            "out_offset": {
+              "OTIO_SCHEMA": "RationalTime.1",
+              "rate": 30.0,
+              "value": 6.0
+            },
+            "transition_type": "SMPTE_Dissolve"
+          },
+          {
+            "OTIO_SCHEMA": "Clip.2",
+            "active_media_reference_key": "DEFAULT_MEDIA",
+            "effects": [],
+            "enabled": true,
+            "markers": [],
+            "media_references": {
+              "DEFAULT_MEDIA": {
+                "OTIO_SCHEMA": "ExternalReference.1",
+                "available_image_bounds": null,
+                "available_range": {
+                  "OTIO_SCHEMA": "TimeRange.1",
+                  "duration": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 120.0
+                  },
+                  "start_time": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 0.0
+                  }
+                },
+                "metadata": {
+                  "filmcraft": {
+                    "info": {
+                      "audio": null,
+                      "container": "MPEG-4",
+                      "duration": 1016064000000,
+                      "file_size": 1030511,
+                      "kind": "Movie",
+                      "name": "end-card_1080p30.mp4",
+                      "start_timecode": null,
+                      "video": {
+                        "bitrate": 2057244,
+                        "codec": "H.264 (High)",
+                        "color": {
+                          "matrix": "Bt709",
+                          "primaries": "Bt709",
+                          "range": "Limited",
+                          "transfer": "Bt709"
+                        },
+                        "frame_rate": {
+                          "den": 1,
+                          "num": 30
+                        },
+                        "has_alpha": false,
+                        "height": 1080,
+                        "par": [
+                          1,
+                          1
+                        ],
+                        "pixel_format": "YUV 4:2:0 8-bit",
+                        "width": 1920
+                      }
+                    },
+                    "item": 9,
+                    "label": "Violet",
+                    "offline": false
+                  }
+                },
+                "name": "end-card_1080p30.mp4",
+                "target_url": "../../../effectcraft/out/renders/end-card_1080p30.mp4"
+              }
+            },
+            "metadata": {
+              "filmcraft": {
+                "duration_ticks": 1016064000000,
+                "effects": [
+                  {
+                    "effect": "motion",
+                    "enabled": true,
+                    "params": {
+                      "anchor": {
+                        "value": {
+                          "Vec2": {
+                            "x": 960.0,
+                            "y": 540.0
+                          }
+                        }
+                      },
+                      "anti_flicker": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "position": {
+                        "value": {
+                          "Vec2": {
+                            "x": 960.0,
+                            "y": 540.0
+                          }
+                        }
+                      },
+                      "rotation": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "scale": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      },
+                      "scale_width": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      },
+                      "uniform_scale": {
+                        "value": {
+                          "Bool": true
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "opacity",
+                    "enabled": true,
+                    "params": {
+                      "blend": {
+                        "value": {
+                          "Choice": 0
+                        }
+                      },
+                      "opacity": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "time_remap",
+                    "enabled": true,
+                    "params": {
+                      "speed": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  }
+                ],
+                "gain_db": 0.0,
+                "group": null,
+                "label": "Violet",
+                "link": null,
+                "scale_to_frame": false,
+                "source_in_ticks": 0
+              }
+            },
+            "name": "end-card_1080p30.mp4",
+            "source_range": {
+              "OTIO_SCHEMA": "TimeRange.1",
+              "duration": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 120.0
+              },
+              "start_time": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 0.0
+              }
+            }
+          }
+        ],
+        "effects": [],
+        "enabled": true,
+        "kind": "Video",
+        "markers": [],
+        "metadata": {
+          "filmcraft": {
+            "channels": "Stereo",
+            "effects": [],
+            "locked": false,
+            "muted": false,
+            "pan": 0.0,
+            "solo": false,
+            "sync_lock": true,
+            "volume_db": 0.0
+          }
+        },
+        "name": "Video 1",
+        "source_range": null
+      },
+      {
+        "OTIO_SCHEMA": "Track.1",
+        "children": [
+          {
+            "OTIO_SCHEMA": "Gap.1",
+            "effects": [],
+            "enabled": true,
+            "markers": [],
+            "metadata": {},
+            "name": "",
+            "source_range": {
+              "OTIO_SCHEMA": "TimeRange.1",
+              "duration": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 450.0
+              },
+              "start_time": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 0.0
+              }
+            }
+          },
+          {
+            "OTIO_SCHEMA": "Clip.2",
+            "active_media_reference_key": "DEFAULT_MEDIA",
+            "effects": [],
+            "enabled": true,
+            "markers": [],
+            "media_references": {
+              "DEFAULT_MEDIA": {
+                "OTIO_SCHEMA": "ExternalReference.1",
+                "available_image_bounds": null,
+                "available_range": {
+                  "OTIO_SCHEMA": "TimeRange.1",
+                  "duration": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 150.0
+                  },
+                  "start_time": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 0.0
+                  }
+                },
+                "metadata": {
+                  "filmcraft": {
+                    "info": {
+                      "audio": null,
+                      "container": "Image",
+                      "duration": 1270080000000,
+                      "file_size": 148651,
+                      "kind": "Still",
+                      "name": "LUM_0002_label-detail.jpg",
+                      "start_timecode": null,
+                      "video": {
+                        "bitrate": null,
+                        "codec": "JPG",
+                        "color": {
+                          "matrix": "Bt709",
+                          "primaries": "Bt709",
+                          "range": "Full",
+                          "transfer": "Srgb"
+                        },
+                        "frame_rate": {
+                          "den": 1001,
+                          "num": 30000
+                        },
+                        "has_alpha": false,
+                        "height": 1350,
+                        "par": [
+                          1,
+                          1
+                        ],
+                        "pixel_format": "RGB 8-bit",
+                        "width": 1080
+                      }
+                    },
+                    "item": 14,
+                    "label": "Lavender",
+                    "offline": false
+                  }
+                },
+                "name": "LUM_0002_label-detail.jpg",
+                "target_url": "../../../lightcraft/out/web-jpeg-srgb-2048/LUM_0002_label-detail.jpg"
+              }
+            },
+            "metadata": {
+              "filmcraft": {
+                "duration_ticks": 1016064000000,
+                "effects": [
+                  {
+                    "effect": "motion",
+                    "enabled": true,
+                    "params": {
+                      "anchor": {
+                        "value": {
+                          "Vec2": {
+                            "x": 540.0,
+                            "y": 675.0
+                          }
+                        }
+                      },
+                      "anti_flicker": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "position": {
+                        "value": {
+                          "Vec2": {
+                            "x": 960.0,
+                            "y": 540.0
+                          }
+                        }
+                      },
+                      "rotation": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "scale": {
+                        "value": {
+                          "Float": 86.0
+                        }
+                      },
+                      "scale_width": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      },
+                      "uniform_scale": {
+                        "value": {
+                          "Bool": true
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "opacity",
+                    "enabled": true,
+                    "params": {
+                      "blend": {
+                        "value": {
+                          "Choice": 0
+                        }
+                      },
+                      "opacity": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "time_remap",
+                    "enabled": true,
+                    "params": {
+                      "speed": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  }
+                ],
+                "gain_db": 0.0,
+                "group": null,
+                "label": "Lavender",
+                "link": null,
+                "scale_to_frame": false,
+                "source_in_ticks": 0
+              }
+            },
+            "name": "LUM_0002_label-detail.jpg",
+            "source_range": {
+              "OTIO_SCHEMA": "TimeRange.1",
+              "duration": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 120.0
+              },
+              "start_time": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 0.0
+              }
+            }
+          }
+        ],
+        "effects": [],
+        "enabled": true,
+        "kind": "Video",
+        "markers": [],
+        "metadata": {
+          "filmcraft": {
+            "channels": "Stereo",
+            "effects": [],
+            "locked": false,
+            "muted": false,
+            "pan": 0.0,
+            "solo": false,
+            "sync_lock": true,
+            "volume_db": 0.0
+          }
+        },
+        "name": "Video 2",
+        "source_range": null
+      },
+      {
+        "OTIO_SCHEMA": "Track.1",
+        "children": [
+          {
+            "OTIO_SCHEMA": "Gap.1",
+            "effects": [],
+            "enabled": true,
+            "markers": [],
+            "metadata": {},
+            "name": "",
+            "source_range": {
+              "OTIO_SCHEMA": "TimeRange.1",
+              "duration": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 285.0
+              },
+              "start_time": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 0.0
+              }
+            }
+          },
+          {
+            "OTIO_SCHEMA": "Clip.2",
+            "active_media_reference_key": "DEFAULT_MEDIA",
+            "effects": [],
+            "enabled": true,
+            "markers": [],
+            "media_references": {
+              "DEFAULT_MEDIA": {
+                "OTIO_SCHEMA": "ExternalReference.1",
+                "available_image_bounds": null,
+                "available_range": {
+                  "OTIO_SCHEMA": "TimeRange.1",
+                  "duration": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 180.0
+                  },
+                  "start_time": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 0.0
+                  }
+                },
+                "metadata": {
+                  "filmcraft": {
+                    "info": {
+                      "audio": null,
+                      "container": "QuickTime",
+                      "duration": 1524096000000,
+                      "file_size": 24978707,
+                      "kind": "Movie",
+                      "name": "lower-third-origin_prores4444_alpha.mov",
+                      "start_timecode": null,
+                      "video": {
+                        "bitrate": 33303134,
+                        "codec": "Apple ProRes 4444",
+                        "color": {
+                          "matrix": "Bt709",
+                          "primaries": "Bt709",
+                          "range": "Limited",
+                          "transfer": "Bt709"
+                        },
+                        "frame_rate": {
+                          "den": 1,
+                          "num": 30
+                        },
+                        "has_alpha": true,
+                        "height": 1080,
+                        "par": [
+                          1,
+                          1
+                        ],
+                        "pixel_format": "YUVA 4:4:4 12-bit",
+                        "width": 1920
+                      }
+                    },
+                    "item": 10,
+                    "label": "Violet",
+                    "offline": false
+                  }
+                },
+                "name": "lower-third-origin_prores4444_alpha.mov",
+                "target_url": "../../../effectcraft/out/renders/lower-third-origin_prores4444_alpha.mov"
+              }
+            },
+            "metadata": {
+              "filmcraft": {
+                "duration_ticks": 1397088000000,
+                "effects": [
+                  {
+                    "effect": "motion",
+                    "enabled": true,
+                    "params": {
+                      "anchor": {
+                        "value": {
+                          "Vec2": {
+                            "x": 960.0,
+                            "y": 540.0
+                          }
+                        }
+                      },
+                      "anti_flicker": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "position": {
+                        "value": {
+                          "Vec2": {
+                            "x": 960.0,
+                            "y": 540.0
+                          }
+                        }
+                      },
+                      "rotation": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "scale": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      },
+                      "scale_width": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      },
+                      "uniform_scale": {
+                        "value": {
+                          "Bool": true
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "opacity",
+                    "enabled": true,
+                    "params": {
+                      "blend": {
+                        "value": {
+                          "Choice": 0
+                        }
+                      },
+                      "opacity": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "time_remap",
+                    "enabled": true,
+                    "params": {
+                      "speed": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  }
+                ],
+                "gain_db": 0.0,
+                "group": null,
+                "label": "Violet",
+                "link": null,
+                "scale_to_frame": false,
+                "source_in_ticks": 0
+              }
+            },
+            "name": "lower-third-origin_prores4444_alpha.mov",
+            "source_range": {
+              "OTIO_SCHEMA": "TimeRange.1",
+              "duration": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 165.0
+              },
+              "start_time": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 0.0
+              }
+            }
+          },
+          {
+            "OTIO_SCHEMA": "Gap.1",
+            "effects": [],
+            "enabled": true,
+            "markers": [],
+            "metadata": {},
+            "name": "",
+            "source_range": {
+              "OTIO_SCHEMA": "TimeRange.1",
+              "duration": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 108.0
+              },
+              "start_time": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 0.0
+              }
+            }
+          },
+          {
+            "OTIO_SCHEMA": "Clip.2",
+            "active_media_reference_key": "DEFAULT_MEDIA",
+            "effects": [],
+            "enabled": true,
+            "markers": [],
+            "media_references": {
+              "DEFAULT_MEDIA": {
+                "OTIO_SCHEMA": "ExternalReference.1",
+                "available_image_bounds": null,
+                "available_range": {
+                  "OTIO_SCHEMA": "TimeRange.1",
+                  "duration": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 180.0
+                  },
+                  "start_time": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 0.0
+                  }
+                },
+                "metadata": {
+                  "filmcraft": {
+                    "info": {
+                      "audio": null,
+                      "container": "QuickTime",
+                      "duration": 1524096000000,
+                      "file_size": 22489788,
+                      "kind": "Movie",
+                      "name": "lower-third-mara_prores4444_alpha.mov",
+                      "start_timecode": null,
+                      "video": {
+                        "bitrate": 29984576,
+                        "codec": "Apple ProRes 4444",
+                        "color": {
+                          "matrix": "Bt709",
+                          "primaries": "Bt709",
+                          "range": "Limited",
+                          "transfer": "Bt709"
+                        },
+                        "frame_rate": {
+                          "den": 1,
+                          "num": 30
+                        },
+                        "has_alpha": true,
+                        "height": 1080,
+                        "par": [
+                          1,
+                          1
+                        ],
+                        "pixel_format": "YUVA 4:4:4 12-bit",
+                        "width": 1920
+                      }
+                    },
+                    "item": 11,
+                    "label": "Violet",
+                    "offline": false
+                  }
+                },
+                "name": "lower-third-mara_prores4444_alpha.mov",
+                "target_url": "../../../effectcraft/out/renders/lower-third-mara_prores4444_alpha.mov"
+              }
+            },
+            "metadata": {
+              "filmcraft": {
+                "duration_ticks": 1524096000000,
+                "effects": [
+                  {
+                    "effect": "motion",
+                    "enabled": true,
+                    "params": {
+                      "anchor": {
+                        "value": {
+                          "Vec2": {
+                            "x": 960.0,
+                            "y": 540.0
+                          }
+                        }
+                      },
+                      "anti_flicker": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "position": {
+                        "value": {
+                          "Vec2": {
+                            "x": 960.0,
+                            "y": 540.0
+                          }
+                        }
+                      },
+                      "rotation": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "scale": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      },
+                      "scale_width": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      },
+                      "uniform_scale": {
+                        "value": {
+                          "Bool": true
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "opacity",
+                    "enabled": true,
+                    "params": {
+                      "blend": {
+                        "value": {
+                          "Choice": 0
+                        }
+                      },
+                      "opacity": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "time_remap",
+                    "enabled": true,
+                    "params": {
+                      "speed": {
+                        "value": {
+                          "Float": 100.0
+                        }
+                      }
+                    }
+                  }
+                ],
+                "gain_db": 0.0,
+                "group": null,
+                "label": "Violet",
+                "link": null,
+                "scale_to_frame": false,
+                "source_in_ticks": 0
+              }
+            },
+            "name": "lower-third-mara_prores4444_alpha.mov",
+            "source_range": {
+              "OTIO_SCHEMA": "TimeRange.1",
+              "duration": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 180.0
+              },
+              "start_time": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 0.0
+              }
+            }
+          }
+        ],
+        "effects": [],
+        "enabled": true,
+        "kind": "Video",
+        "markers": [],
+        "metadata": {
+          "filmcraft": {
+            "channels": "Stereo",
+            "effects": [],
+            "locked": false,
+            "muted": false,
+            "pan": 0.0,
+            "solo": false,
+            "sync_lock": true,
+            "volume_db": 0.0
+          }
+        },
+        "name": "Video 3",
+        "source_range": null
+      },
+      {
+        "OTIO_SCHEMA": "Track.1",
+        "children": [
+          {
+            "OTIO_SCHEMA": "Clip.2",
+            "active_media_reference_key": "DEFAULT_MEDIA",
+            "effects": [],
+            "enabled": true,
+            "markers": [],
+            "media_references": {
+              "DEFAULT_MEDIA": {
+                "OTIO_SCHEMA": "ExternalReference.1",
+                "available_image_bounds": null,
+                "available_range": {
+                  "OTIO_SCHEMA": "TimeRange.1",
+                  "duration": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 900.72
+                  },
+                  "start_time": {
+                    "OTIO_SCHEMA": "RationalTime.1",
+                    "rate": 30.0,
+                    "value": 0.0
+                  }
+                },
+                "metadata": {
+                  "filmcraft": {
+                    "info": {
+                      "audio": {
+                        "bits_per_sample": null,
+                        "channels": 2,
+                        "codec": "MP3",
+                        "sample_rate": 48000
+                      },
+                      "container": "MP3",
+                      "duration": 7626576384000,
+                      "file_size": 738323,
+                      "kind": "AudioOnly",
+                      "name": "lumen-jingle-30s.mp3",
+                      "start_timecode": null,
+                      "video": null
+                    },
+                    "item": 12,
+                    "label": "Caribbean",
+                    "offline": false
+                  }
+                },
+                "name": "lumen-jingle-30s.mp3",
+                "target_url": "../../music/lumen-jingle-30s.mp3"
+              }
+            },
+            "metadata": {
+              "filmcraft": {
+                "duration_ticks": 7620480000000,
+                "effects": [
+                  {
+                    "effect": "volume",
+                    "enabled": true,
+                    "params": {
+                      "bypass": {
+                        "value": {
+                          "Bool": false
+                        }
+                      },
+                      "level": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "channel_volume",
+                    "enabled": true,
+                    "params": {
+                      "bypass": {
+                        "value": {
+                          "Bool": false
+                        }
+                      },
+                      "left": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      },
+                      "right": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "effect": "panner",
+                    "enabled": true,
+                    "params": {
+                      "balance": {
+                        "value": {
+                          "Float": 0.0
+                        }
+                      }
+                    }
+                  }
+                ],
+                "gain_db": -6.0,
+                "group": null,
+                "label": "Caribbean",
+                "link": null,
+                "scale_to_frame": false,
+                "source_in_ticks": 0
+              }
+            },
+            "name": "lumen-jingle-30s.mp3",
+            "source_range": {
+              "OTIO_SCHEMA": "TimeRange.1",
+              "duration": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 900.0
+              },
+              "start_time": {
+                "OTIO_SCHEMA": "RationalTime.1",
+                "rate": 30.0,
+                "value": 0.0
+              }
+            }
+          }
+        ],
+        "effects": [],
+        "enabled": true,
+        "kind": "Audio",
+        "markers": [],
+        "metadata": {
+          "filmcraft": {
+            "channels": "Stereo",
+            "effects": [],
+            "locked": false,
+            "muted": false,
+            "pan": 0.0,
+            "solo": false,
+            "sync_lock": true,
+            "volume_db": 0.0
+          }
+        },
+        "name": "Audio 1",
+        "source_range": null
+      },
+      {
+        "OTIO_SCHEMA": "Track.1",
+        "children": [],
+        "effects": [],
+        "enabled": true,
+        "kind": "Audio",
+        "markers": [],
+        "metadata": {
+          "filmcraft": {
+            "channels": "Stereo",
+            "effects": [],
+            "locked": false,
+            "muted": false,
+            "pan": 0.0,
+            "solo": false,
+            "sync_lock": true,
+            "volume_db": 0.0
+          }
+        },
+        "name": "Audio 2",
+        "source_range": null
+      }
+    ],
+    "effects": [],
+    "enabled": true,
+    "markers": [],
+    "metadata": {},
+    "name": "Lumen Ember Ridge 30 - 1080p30",
+    "source_range": null
+  }
+}

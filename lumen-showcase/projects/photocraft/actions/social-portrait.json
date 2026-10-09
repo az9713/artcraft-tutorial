@@ -1,0 +1,1 @@
+[["image.crop", {"x": 700, "y": 0, "width": 1600, "height": 2000}], ["image.imageSize", {"width": 1080, "height": 1350, "resample": "bicubic"}], ["filter.sharpen.unsharpMask", {"amount": 50, "radius": 0.5, "threshold": 2}]]

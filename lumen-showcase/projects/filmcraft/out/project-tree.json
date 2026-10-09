@@ -1,0 +1,84 @@
+{
+ "activeSequence": 6,
+ "dirty": true,
+ "name": "Untitled",
+ "path": null,
+ "revision": 11,
+ "root": {
+  "children": [
+   {
+    "duration": 0,
+    "item": 6,
+    "label": "Forest",
+    "name": "Lumen Ember Ridge 30 - 1080p30",
+    "type": "Sequence"
+   },
+   {
+    "duration": 1270080000000,
+    "item": 7,
+    "label": "Violet",
+    "name": "lumen-logo-sting_1080p30.mp4",
+    "type": "Movie"
+   },
+   {
+    "duration": 1016064000000,
+    "item": 8,
+    "label": "Violet",
+    "name": "title-card-ember-ridge_1080p30.mp4",
+    "type": "Movie"
+   },
+   {
+    "duration": 1016064000000,
+    "item": 9,
+    "label": "Violet",
+    "name": "end-card_1080p30.mp4",
+    "type": "Movie"
+   },
+   {
+    "duration": 1524096000000,
+    "item": 10,
+    "label": "Violet",
+    "name": "lower-third-origin_prores4444_alpha.mov",
+    "type": "Movie"
+   },
+   {
+    "duration": 1524096000000,
+    "item": 11,
+    "label": "Violet",
+    "name": "lower-third-mara_prores4444_alpha.mov",
+    "type": "Movie"
+   },
+   {
+    "duration": 7626576384000,
+    "item": 12,
+    "label": "Caribbean",
+    "name": "lumen-jingle-30s.mp3",
+    "type": "Audio"
+   },
+   {
+    "duration": 1270080000000,
+    "item": 13,
+    "label": "Lavender",
+    "name": "LUM_0001_wide.tif",
+    "type": "Still Image"
+   },
+   {
+    "duration": 1270080000000,
+    "item": 14,
+    "label": "Lavender",
+    "name": "LUM_0002_label-detail.jpg",
+    "type": "Still Image"
+   },
+   {
+    "duration": 1270080000000,
+    "item": 15,
+    "label": "Lavender",
+    "name": "ember-ridge-story-post.jpg",
+    "type": "Still Image"
+   }
+  ],
+  "id": 0,
+  "name": "Untitled"
+ },
+ "sourceItem": null
+}
