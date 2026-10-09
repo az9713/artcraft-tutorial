@@ -1,0 +1,2 @@
+# Keep every artifact byte-exact (no line-ending conversion on checkout)
+* -text
